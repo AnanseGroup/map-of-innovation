@@ -1,0 +1,153 @@
+.rowAlign {
+ width: 100%;
+ text-align: center; // center the content of the container
+}
+
+.rowTextBlock {
+ width: 200px;
+ display: inline-block; // display inline with abality to provide width/height
+}
+
+
+
+#wTitle{
+font-size: 40pt ;
+margin-top: 20px;
+color:  #333333; 
+text-align: center;
+}
+
+#wStatus{
+font-size: 16pt ;
+color:  #333333; 
+margin-bottom: 42px;
+text-align: center;
+}
+
+.wBlockOne{
+display: inline-block;
+vertical-align: middle;
+width: 100%;
+}
+.wnavigation-bar {
+	line-height: 30pt;
+	width: 100%;
+	text-align: center;
+}
+
+.wPage{
+margin-left: 42px;
+margin-right: 42px;
+}
+.wBlockTwo{
+padding-top: 20px;
+}
+
+.wBlockImage{
+padding-top: 20px;
+display: block;
+}
+
+.wBlockFour{
+padding-top: 20px;
+display: block;
+}
+
+.wBlockTwo .rowTextBlock{
+	width: 20%;
+	margin-right: 20px;
+}
+
+.wBlockFour .rowTextBlock{
+	width: 20%;
+	margin-right: 20px;
+}
+
+
+.wBlockLast .rowTextBlock{
+	width: 20%;
+	margin-right: 20px;
+}
+
+.wBlockTh{
+padding-top: 20px;
+width: 100%;
+display: inline-block;
+}
+
+hr{
+color: #e5e5e5;
+}
+#w-top-navigation {
+width: 100%;
+display: inline-block;
+}
+
+#w-top-navigation-bar-edit-button{
+	height: 14pt;
+	margin-right: 40px;
+}
+
+#w-top-navigation-bar-flag-incorrect-button{
+	height: 14pt;
+	padding-left: 80%;
+}
+
+.w-block-left{
+float:left;
+width: 40%;
+display: block;
+}
+.w-block-right{
+width: 40%;
+float: right;
+}
+#w-top-lastupdated-text{
+height: 11pt;
+color: #e5e5e5;
+}
+
+#show-more-section{
+width: 100%;
+}
+#show-more-button {
+	display: inline-block;
+	height: 50px;
+	margin-left: 42%;
+	width: 200px;
+	border-color: transparent;
+	background-image: url('/assets/show_more.png');
+	background-size: 200px;
+	background-repeat: no-repeat;
+	background-position: 0 7px;
+	text-decoration: none;	
+	background-color: transparent;
+}
+
+#show-less-button {
+	display: inline-block;
+	height: 50px;
+	margin-left: 42%;
+	width: 200px;
+	border-color: transparent;
+	background-image: url('/assets/show_less.png');
+	background-size: 200px;
+	background-repeat: no-repeat;
+	background-position: 0 7px;
+	text-decoration: none;	
+	background-color: transparent;
+}
+
+#social-media-block{
+	display: inline-block;
+}
+
+#w-address{
+	display: inline-block;
+}
+.w-social-button{
+width: 20px;
+height: 20px;
+}
+
+

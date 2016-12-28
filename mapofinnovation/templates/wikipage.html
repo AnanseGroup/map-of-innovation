@@ -1,0 +1,97 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Source+Sans+Pro:200,300,300i,400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/wikipage.css"/>
+<link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
+<script type='text/javascript' src='/js/wiki.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+ <%include file="/snippets/header.html" />
+ 
+<div class="wBlockHeader">
+<div class="w-top-navigation">
+<a href="/" >
+    	<img src="/assets/edit_button.png" id="w-top-navigation-bar-edit-button">
+</a>Last updated :${last_updated}
+<a href="/" >
+    	<img src="/assets/flag_button.png" id="w-top-navigation-bar-flag-incorrect-button">
+</a>
+</div>
+ <div class="wnavigation-bar">
+    <a href="/" id="wnavigation-bar-article-button" class="navigation-bar-button selected-navigation-bar-button">Article</a>
+    <a href="/" id="wnavigation-bar-talk-button" class="navigation-bar-button">Talk</a>
+    <a href="/" id="wnavigation-bar-document-revision-button" class="navigation-bar-button">Revision</a>
+	</div>
+</div>
+<div class="wBlockOne">
+<img src="/assets/logoplaceholder.png" alt="#" style="height: 100px; display:block;margin-left: auto;margin-right: auto;">
+<p id="wTitle">${name}</p>
+<p id="wStatus">${status}</p>
+<hr />
+</div>
+<div class="wBlockTwo">
+<div class="rowAlign">
+  <div class="rowTextBlock">
+  <p>Contact Info</p>
+  <a>${website_url}</a>
+  <br/>
+	<div id="w-address">  
+	<p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${address}</p> 
+  </div> 
+  </div>
+  <div class="rowTextBlock">
+   <p>Social Media</p>
+   <div class="social-media-block">
+   <a href="#"  id="w-social-button" >
+	   <img src="/assets/social_twitter.png" class="w-social-button" >
+   </a>
+   <a href="#"  id="w-social-gplus" >
+	<img src="/assets/social_google+.png" class="w-social-button">   
+   </a>
+   <a href="#" id="w-social-meetup">
+	<img src="/assets/social_meetup.png"  class="w-social-button">   
+   </a>
+   <a href="#" id="w-social-fablab" >
+   <img src="/assets/social_fablab.png"  class="w-social-button">   
+   	</a>
+   <a href="#"  id="w-social-facebook">
+	<img src="/assets/social_facebook.png"  class="w-social-button">      
+   </a>
+   <a href="#"  id="w-social-jabber">
+	<img src="/assets/social_jabber.png"  class="w-social-button">      
+   </a>
+   <a href="#" id="w-social-linkedin">
+	<img src="/assets/social_linkedin.png"  class="w-social-button">      
+   </a>
+   </div>
+  </div>
+  <div class="rowTextBlock">
+  <p>Service</p>
+  <ul style="text-align: left;"><li>${primarytype}</li><li>${secondarytype}</li></ul>
+  </div>
+  <div class="rowTextBlock">
+  <p>Capabilities</p>
+  <p>Machines_spaceholder</p>
+  </div>
+</div>
+<hr/>
+</div>
+
+<div class="wBlockTh">
+<div  class="w-block-left">
+   <img src="/assets/social_fablab.png" alt="#" style="width:100%;">   
+  </div>
+<div class="w-block-right"> 
+	<p id="w-space-description">${space_description}</p>
+</div>
+<br/>
+</div>
+<div id="show-more-section">
+<button id="show-more-button" onclick="show_more_wiki()"></button>
+<hr/>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+include mapofinnovation/config/deployment.ini_tmpl
+recursive-include mapofinnovation/public *
+recursive-include mapofinnovation/templates *
