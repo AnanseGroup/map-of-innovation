@@ -1,6 +1,7 @@
 html,body {
 	margin: 0;
 	padding: 0;
+	height: 100%;
 }
 
 body {
@@ -16,6 +17,10 @@ h1,h2,h3,h4,h5,h6 {
 
 a {
 	text-decoration: none;
+}
+
+a img {
+	border: none;
 }
 
 .source-sans {
@@ -50,6 +55,10 @@ a {
   top: -moz-calc(100% - 195px);
 	left: -webkit-calc(100% - 195px);
   top: calc(100% - 195px);
+}
+
+.leaflet-touch .leaflet-bar {
+	border: none;
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {
@@ -149,6 +158,7 @@ a {
 }
 
 .filter-type-color {
+	float: left;
 	width:8px;
 	height:8px;
 	padding:0;
@@ -202,7 +212,7 @@ a {
     border-radius: 100px;
     width: 35px !important;
     height: 35px !important;
-    line-height: 20px !important;
+    line-height: 31px !important;
     font-size: 80px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 100;
@@ -222,14 +232,21 @@ a {
 }
 
 #navigation-bar-home {
-	left: 42px;
-	top: 13px;
-	height: 74px;
 	position: relative;
-	margin-right: 120px;
+	height: 100%;
+	width: auto;
+}
+
+.navigation-bar-logo {
+	float: left;
+	height: 74px;
+	margin-left: 42px;
+	margin-top: 13px;
+	margin-right: 78px;
 }
 
 .navigation-bar {
+	float: left;
 	line-height: 100px;
 }
 
@@ -448,6 +465,9 @@ a {
     padding-top: 6px;
 }
 
+#markerjson {
+	display: none;
+}
 
 /*PRIMARY SPACE TYPE COLORS*/
 .hub-color {
