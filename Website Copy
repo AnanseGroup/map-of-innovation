@@ -1,0 +1,68 @@
+Maquette page 4: Welcome!
+Do you ever find yourself in some random city wondering, where are all the crazy creative people? We’re attempting to answer that question for everyone, everywhere in the world— by building an open wiki-database of all the community innovation spaces.
+ 
+Join us:
+(include links to)
+Add a space
+Edit a space
+Volunteer as a moderator
+Scroll-over text: We’re always looking for qualified moderators who can help verify information and correct details about the creative spaces in their region(s).
+Help develop the platform
+Link to Documentation page
+Contact us
+ 
+pg10: Team & Partners
+This platform was financially supported by the German government BMZ, and facilitated by GIZ. Thanks to our sponsors at the Fab Foundation and the American Society of Mechanical Engineers (ASME) for sponsoring our early mapping efforts. This effort is led by the Ananse Group and Open Movement, and our team includes representatives from MAKE, Hackerspaces.org, the Fab Lab network, TheMakerMap, and Global Innovation Gathering. Thank you also to our amazing mapping partners at Makery, Bongo Hive, Superhero Spaces, the World Bank, Instructables, and Hacedores who did much of the mapping ground work.
+ 
+Working Group:
+Everyone’s bios and photos!
+ 
+pg11: Goals:
+We’re building a dynamic and collaborative platform to keep an up-to-date database of all likeminded community innovation spaces, and to encourage more networking and linkages amongst these spaces worldwide. We’ve standardized a set of datafields and built an API in conjunction with Rob Baker’s Maker.json, so all data hosted on the Atlas can be easily shared across other sites. We’re in the process of turning this platform into an open-access wiki, to keep everything up-to-date through crowdsourced submissions and moderators.
+ 
+What’s a “community innovation space”?
+Ð	A community of people eager to collaborate with others— the space must be either open to the public or available for outside partnerships
+Ð	Support for old and/or new technological innovation, including hardware, software, metal-working, handicrafts, design thinking, repurposed trash, farming, etc.
+Ð	A physical or virtual space (or temporary event) that promotes creativity and nurtures new ideas
+ 
+ADD IMAGE: happy people making things
+ 
+pg12: “Documentation and Licensing”
+
+In our attempt to merge 50+ disparate databases into one coherent platform and API, some of our labelling became rather unconventional (and if you vehemently disagree with our decisions, please join the discussion!). Considering the vast amount of overlap among different types of spaces, we grouped all the physical, tool-oriented workshops (makerspaces, hackerspaces, fab labs, repair cafés, communal art spaces, public labs, and likeminded communities) into the single category of Workshops. To separate out the different types of Workshops and Hubs, please sort these Workshop by Services (what you can do in the space) and Network Affiliations (Hackerspaces.org, Fab Lab network, Global Innovation Gathering, and other networks to which spaces may belong).
+
+In contrast to Workshops, we define Hubs as spaces that focus primarily on software and/or connecting people, rather than physical hardware and tools. There is considerable grey area between Hubs and Workshops, but we’ve tried to define spaces by their primary objectives—even if they incorporate both software and hardware. We apologise for the many errors in our initial dataset, so please let us know whenever spaces are mislabelled.
+
+Events are temporary gatherings that foster the same sort of community-driven innovation that we’ve seen in more permanent spaces. Examples include Maker Faire, Burning Man and regional Burns, Barcamp, etc.
+
+Thanks to The Maker Map and Open, we’re including two types of spaces that aren’t actually community-driven, but that are useful for inventing, prototyping, and manufacturing new technologies: Factories and retail Shops. The Factories listed here are all smaller-scale production facilities that want to help you prototype and/or manufacture products, from the state-of-the-art 3D printer farms to the roadside woodworker. These Shops are places to go for your electronics, equipment, and other supplies.
+
+Workshops include the following four types of spaces: 
+
+Hackerspaces:
+The idea of the hackerspace started in Europe a few decades ago, mostly as a collaborative space for software hackers—but today, most of the world’s hackerspaces have embraced hardware as well. Generally (but not exclusively), hackerspaces embrace radically democratic and cooperative forms of governance, and don’t have formal ties to industry or academia. Most of these are registered on hackerspaces.org.
+
+Makerspaces: 
+There are few clear distinctions between makerspaces and hackerspaces, but generally makerspaces focus more on education and tinkering than social/technological activism—they often embrace open-source and democratic ideals, but don’t tend to be as politically engaged as hackerspaces. Schools, governments, and corporations tend to favor makerspaces with more traditional, hierarchical governance structures. MAKE popularized the concept with their Maker Faires across the USA back in the early 2000s, and today makerspaces have spread worldwide. Here’s some history and more details on these distinctions from the founder of a Boston makerspace. For those interested in further academic research, you can read maxigas’s comprehensive genealogical history of hacklabs and hackerspaces, and we’ve got an exhaustive compilation of links on the topic.
+
+Fab Labs:
+The Fab Lab network is a verified community of creative spaces that all agree to the Fab Charter and contain a certain minimum set of digital fabrication capabilities (machines like laser cutters and 3D printers). Any new space can apply to join the network for free if you comply with these basic requirements. The Fab Labs started in 2001 as the requisite “community outreach” portion of a research grant to build the Star Trek Replicator, given to the MIT Center for Bits and Atoms director Dr. Neil Gershenfeld. He had to find some way to share his research, so he created a publicly accessible workshop in which community members could “make almost anything,” as described in his TED talk. Today there are nearly 1000 Fab Labs around the world, many of which are part of universities, research institutions, and government programs. They’ve got their own online Academy of courses, and you can watch this year’s How to Make Almost Anything lectures for free. Fab Labs tend to have more structured programs and be better-networked than other spaces, since they’re all part of one global community. 
+
+Appropriate Technology Workshops
+A variety of international governments created these spaces in the 1970s and 1980s to introduce new artisanal activities, promote vocational skills-training, and allow people to experiment with technological innovation on a local level. These workshops often specialize in analogue woodworking and metal fabrication equipment rather than digital technologies. They include the Intermediate Technology Transfer Units in Ghana and England, the Men’s Sheds network in Australia, the Punto Vive Digital network in Colombia, and other efforts worldwide.
+
+
+Datafields:
+Standardising the datafields across dozens of different databases of innovation spaces was a lengthy and arduous process, and we haven’t quite succeeded yet—join the API discussion on our Github here!
+ 
+
+pg13: Developer Documentation
+ 
+Licensing
+Our code will fall under the MIT License. The database structure and any copyright-able data (that doesn’t belong to various partners) will be licensed under Creative Commons Attribution-ShareAlike 4.0 International Public License, as well as the Open Data Commons Attribution License where appropriate. All listed spaces will be provided with a clear way in which to delete and/or modify any of their information, so anyone can readily opt-out of the database.
+ 
+Wiki
+Click here to join the open source party on our Github! Everyone’s invited. We’re coding in Python and using Pylons. Our wiki software is MoinMoin, and our database structure is Redis. We’re building this for Linux servers (we are using AWS EC2).
+ 
+API
+Click here to check out our REST API, and click here to get involved with Maker.json. If you have ideas for how to structure our datafields, please join the discussion forum here.
