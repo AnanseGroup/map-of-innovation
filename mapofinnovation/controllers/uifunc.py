@@ -22,7 +22,7 @@ class UifuncController(BaseController):
 		"country": "country",
 		"website": "primary_website",
 		"primarytype": "primary_type",
-		"multitypes": "multiple_type",
+		"multitypes": "types_multiple",
 		"description": "description",
 		"latitude": "latitude",
 		"longitude":"longitude",
