@@ -85,7 +85,7 @@ a img {
 }
 
 #sponsor-container {
-	display: inline-flex;
+	display: inline-block;
 	position: fixed;
 	right: 100px;
 	margin-top: 10px;
