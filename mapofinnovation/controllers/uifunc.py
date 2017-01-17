@@ -9,8 +9,8 @@ from pylons import request, response, session, tmpl_context as c, url
 from pylons.decorators import jsonify
 from pylons.controllers.util import abort, redirect
 from mapofinnovation.lib.base import BaseController, render
-log = logging.getLogger(__name__)
 
+log = logging.getLogger(__name__)
 class UifuncController(BaseController):
 
     def index(self):
@@ -22,7 +22,7 @@ class UifuncController(BaseController):
 		"country": "country",
 		"website": "primary_website",
 		"primarytype": "primary_type",
-		"multitypes": "multiple_type",
+		"multitypes": "types_multiple",
 		"description": "description",
 		"latitude": "latitude",
 		"longitude":"longitude",
