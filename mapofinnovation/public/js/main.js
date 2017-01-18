@@ -44,7 +44,7 @@ var allMarkers = [];
 
 var noLocation = [];
 
-for (i=0; i<allSpaces.length; ++i) {
+for (i=0; i<allSpaces.length; ++i) {	
 	var space = allSpaces[i];
 	if (space.latitude && space.longitude) {
 		try {
@@ -65,28 +65,28 @@ for (i=0; i<allSpaces.length; ++i) {
 				popupText += space.country;
 			}
 			popupText += "</span></p>"+"<a class='popup-website-link' target='_blank' href='http://"+space.website+"'>"+space.website+"</a><div class='popup-type-container'>"; 
-			var types = new Set([]);
-			if (space.primarytype.trim() != "") {
-				types.add(space.primarytype);
+
+			var types = [];
+			if (space.primarytype.trim() != "" && types.indexOf(space.primarytype) === -1) {
+				types.push(space.primarytype);
 			} else {
 				console.log("No primary type: " + space.name);
 			}
 			if (space.multitypes != "") {
 				var multis = space.multitypes.split(", ");
 				for (j=0; j<multis.length; j++) {
-					types.add(multis[j]);
+					types.push(multis[j]);
 				}
 			}
-			var typelist = Array.from(types);
-			for (k=0; k<typelist.length; k++) {
+			for (k=0; k<types.length; k++) {
 				var color = "";
-				var type = typelist[k];
+				var type = types[k];
 				type = allTypes[type.toLowerCase().trim()]
 				if (type) {
 		  			popupText += "<div class='popup-type-color " + type.toLowerCase().replace(" ", "-")+"-color" + "'></div><span class='popup-type-text'>"
 		  						+type+"</span>";
 				} else {
-					console.log("Unknown type: "+typelist[k]);
+					console.log("Unknown type: "+types[k]);
 				}
 			}
 			popupText += "</div>";
@@ -98,13 +98,12 @@ for (i=0; i<allSpaces.length; ++i) {
 			allMarkers.push(marker);
 
 		} catch (TypeError) {
-			// console.log("TypeError: " + space.name);
+			console.log("TypeError: " + space.name);
 		}
 	} else {
 		noLocation.push(space);
 	}
 }
-
 map.addLayer(markerClusters, {"chunkedLoading": true});
 
 var appliedFilters = [];

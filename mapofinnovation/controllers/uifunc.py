@@ -9,8 +9,8 @@ from pylons import request, response, session, tmpl_context as c, url
 from pylons.decorators import jsonify
 from pylons.controllers.util import abort, redirect
 from mapofinnovation.lib.base import BaseController, render
-log = logging.getLogger(__name__)
 
+log = logging.getLogger(__name__)
 class UifuncController(BaseController):
 
     def index(self):
@@ -32,12 +32,10 @@ class UifuncController(BaseController):
     	i = 0 
     	for key in r.scan_iter():
     		marker = {}
-    		row = r.hgetall(key)
-    	
-        	for header in indices.keys():
+    		row = r.hgetall(key)    	   
+    		for header in indices.keys():
     			marker[header] = unicode(row[str(indices[header])], errors='replace')
-		
-        markers.append(marker)
+    			markers.append(marker)
     	c.markers = json.dumps(markers)		
     	return render('/makermap.html')
 
