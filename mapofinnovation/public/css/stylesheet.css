@@ -292,10 +292,9 @@ a {
   top: 3px;
 }
 
-#contribute-bar-container {
+.hero-container {
 	height: 270px;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.03);
 	overflow: hidden;
 	background-image: url('../assets/banner_bg.png');
 	background-size: cover;
@@ -324,21 +323,144 @@ a {
 	text-decoration: none;
 }
 
-#contribute-content {
+.hero-content {
 	max-width: 450px;
 	text-align: center;
 	margin: 0 auto;
 }
 
-#contribute-content p {
+.hero-content p {
 	font-size: 1.2em;
 	font-weight: 300;
 }
 
-#contribute-content .header {
+.hero-content .header {
 	font-size: 2.5em;
 	letter-spacing: 0.03em;					
 	margin: 0px 0;
+}
+
+#contribute-bar-container {
+	background-color: rgba(0, 0, 0, 0.03);
+}
+
+#page-hero {
+	background-color: rgba(157, 242, 231, 0.3);
+	background-image: url('../assets/bg_lines_left.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#page-hero .header {
+	margin-top: 50px;
+	color: #00d4d2;
+}
+
+.page-footer {
+	height: 200px;
+	background-image: url('../assets/bg_lines_right.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.page-menu {
+	margin-top: 75px;
+	text-align: center;
+}
+
+.page-menu ul {
+	list-style: none;
+	padding: 0;
+}
+
+.page-menu ul li {
+	display: inline;
+	margin: 0 30px;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+}
+
+.page-menu a {
+	color: rgba(0,0,0,.8);
+}
+
+.page-menu a.active {
+	color: #00d4d2;
+	padding-bottom: 5px;
+	border-bottom: 3px solid;
+}
+
+.page-intro-section {
+	width: 500px;
+	margin: 75px auto;
+	text-align: center;
+}
+
+.page-intro-section .intro-header {
+	font-size: 28px;
+}
+
+.columns {
+	max-width: 900px;
+	width: auto;
+	margin: 0 auto;
+	clear: both;
+	overflow: hidden;
+	padding: 0 15px;
+}
+
+.columns.two>div{
+	width: 50%;
+	float: left;
+}
+
+#goals-page .page-content li{
+	margin: 15px 0;
+	font-weight: lighter;
+  font-size: 20px;
+}
+
+#team-list {
+	margin-top: 75px;
+}
+
+#team-list ul {
+	list-style: none;
+	padding: 0;	
+  max-width: 1170px;
+  width: auto;
+}
+
+#team-list ul .team-member {
+	float: left;
+	width: 25%;
+	margin: 40px 0px;
+
+}
+
+.team-member img{
+	display: block;
+	margin: 0 auto;
+  /*Not sure if these are actually rotated or just in the mockup*/
+	transform: rotate(45deg);
+  margin-bottom: 50px;
+}
+
+.team-member-name {
+	text-align: center;
+	font-weight: normal;
+}
+.team-member-profile {
+	text-align: justify;
+	padding: 0 20px;
+	font-size: 12px;
 }
 
 #map-page-title-container {
