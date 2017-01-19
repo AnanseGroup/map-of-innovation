@@ -20,6 +20,11 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
 
+    map.connect('/about', controller="uifunc", action="about")
+    map.connect('/about/goals', controller="uifunc", action="goals")
+    map.connect('/docs', controller="uifunc", action="userDocs")
+    map.connect('/docs/developer', controller="uifunc", action="devDocs")
+
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')
 

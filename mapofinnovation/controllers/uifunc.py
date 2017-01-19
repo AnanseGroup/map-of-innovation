@@ -57,3 +57,9 @@ class UifuncController(BaseController):
     
     def goals(self):
         return render('/goals.html')
+
+    def userDocs(self):
+    	return render('/user-documentation.html')
+
+    def devDocs(self):
+    	return render('/developer-documentation.html')

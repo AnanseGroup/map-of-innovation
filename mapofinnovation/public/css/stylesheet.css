@@ -340,6 +340,16 @@ a img {
 	text-decoration: none;
 }
 
+.quote {
+	margin: 50px 0;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 26px;
+  letter-spacing: 0.03em;
+  font-weight: lighter;
+	display: block;
+  text-align: center
+}
+
 .hero-content {
 	max-width: 450px;
 	text-align: center;
@@ -388,7 +398,7 @@ a img {
 }
 
 .page-menu {
-	margin-top: 75px;
+	margin: 75px 0;
 	text-align: center;
 }
 
@@ -415,19 +425,28 @@ a img {
 }
 
 .page-intro-section {
-	width: 500px;
+	width: 650px;
 	margin: 75px auto;
 	text-align: center;
+	font-size: 14px;
+	line-height: 1.5;	
 }
 
 .page-intro-section .intro-header {
 	font-size: 28px;
+	font-weight: normal;
+}
+
+.page-content {
+	font-size: 14px;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, 0.8);
 }
 
 .columns {
 	max-width: 900px;
 	width: auto;
-	margin: 0 auto;
+	margin: 0 auto 40px auto;
 	clear: both;
 	overflow: hidden;
 	padding: 0 15px;
@@ -438,6 +457,17 @@ a img {
 	float: left;
 }
 
+.columns> div * {
+/*	padding: 0 5px;*/
+}
+
+.columns > div img {
+	display: block;
+	width: 95%;
+	height: auto;
+	margin: 0 auto;
+}
+
 #goals-page .page-content li{
 	margin: 15px 0;
 	font-weight: lighter;
@@ -445,7 +475,6 @@ a img {
 }
 
 #team-list {
-	margin-top: 75px;
 }
 
 #team-list ul {
