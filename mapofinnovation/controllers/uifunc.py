@@ -3,6 +3,7 @@ import json
 import redis
 import sys
 import urllib
+import os
 
 from urlparse import urlparse
 from pylons import request, response, session, tmpl_context as c, url
@@ -28,7 +29,11 @@ class UifuncController(BaseController):
 		"longitude":"longitude",
 		"services": "services"
 	}
-	r = redis.Redis("localhost")
+	if os.environ.get("REDIS_URL") :
+		redis_url = os.environ.get("REDIS_URL")
+	else:
+		redis_url = "localhost"
+	r = redis.Redis(redis_url)
 	i = 0 
 	for key in r.scan_iter():
 		marker = {}
@@ -41,7 +46,11 @@ class UifuncController(BaseController):
 
     def wikipage(self,id=None):
 	#Return a wiki for the given space 
-	r = redis.Redis('localhost')
+	if os.environ.get("REDIS_URL") :
+		redis_url = os.environ.get("REDIS_URL")
+	else:
+		redis_url = "localhost"
+	r = redis.Redis(redis_url)
 	if id is None :
 		return 'Provide a valid space id'
  	elif r.exists(id):
