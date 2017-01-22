@@ -15,7 +15,11 @@ class AdminfuncController(BaseController):
 
     @jsonify
     def addfromcsv(self):
-        r_server = redis.Redis('localhost')
+        if os.environ.get("REDIS_URL") :
+            redis_url = os.environ.get("REDIS_URL")
+        else:
+            redis_url = "localhost"        
+        r_server = redis.Redis(redis_url)
         with open('mapofinnovation/public/spaces_ready_for_merge.csv', 'rb') as csv_file:
                 dialect = csv.Sniffer().sniff(csv_file.read(), delimiters=',')
                 csv_file.seek(0)
