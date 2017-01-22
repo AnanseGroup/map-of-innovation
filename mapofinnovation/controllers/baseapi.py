@@ -2,6 +2,7 @@ import logging
 import redis
 import json
 import re
+import os
 
 from pylons import request, response, session, tmpl_context as c, url
 from pylons.controllers.util import abort, redirect
@@ -16,7 +17,11 @@ class BaseapiController(BaseController):
     def getAllSpaces(self):
         #return all spaces in json format
 	spaceslist = []
-	r = redis.Redis("localhost")
+	if os.environ.get("REDIS_URL") :
+		redis_url = os.environ.get("REDIS_URL")
+	else:
+		redis_url = "localhost"
+	r = redis.from_url(redis_url)
 	for key in r.scan_iter():	
 		row = r.hgetall(key)
 		space={}
@@ -32,7 +37,11 @@ class BaseapiController(BaseController):
     @jsonify
     def addSpace(self):
 	#add a space
-	r = redis.Redis("localhost")
+	if os.environ.get("REDIS_URL") :
+		redis_url = os.environ.get("REDIS_URL")
+	else:
+		redis_url = "localhost"
+	r = redis.from_url(redis_url)
 	surl = request.params.get("primary_website")
 	exists = False
 	if surl is None :
@@ -59,7 +68,11 @@ class BaseapiController(BaseController):
 	#change a space
 	#TO DO: implement change space for verified space
 	skey = request.params.get("id")
-	r = redis.Redis("localhost")
+	if os.environ.get("REDIS_URL") :
+		redis_url = os.environ.get("REDIS_URL")
+	else:
+		redis_url = "localhost"
+	r = redis.from_url(redis_url)
 	tparams=request.params
         dparams = {}
         for k,v in tparams.items():
@@ -71,6 +84,10 @@ class BaseapiController(BaseController):
     def archiveSpace(self):
 	#archive a space
 	skey = request.params.get("id")
-	r = redis.Redis("localhost")
+	if os.environ.get("REDIS_URL") :
+		redis_url = os.environ.get("REDIS_URL")
+	else:
+		redis_url = "localhost"
+	r = redis.from_url(redis_url)
 	r.hset(skey,'archived',True) 
 	return {'sucess':'true'}
