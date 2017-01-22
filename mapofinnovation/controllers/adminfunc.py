@@ -19,7 +19,7 @@ class AdminfuncController(BaseController):
             redis_url = os.environ.get("REDIS_URL")
         else:
             redis_url = "localhost"        
-        r_server = redis.Redis(redis_url)
+        r_server = redis.from_url(redis_url)
         with open('mapofinnovation/public/spaces_ready_for_merge.csv', 'rb') as csv_file:
                 dialect = csv.Sniffer().sniff(csv_file.read(), delimiters=',')
                 csv_file.seek(0)

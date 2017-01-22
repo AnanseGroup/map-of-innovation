@@ -33,7 +33,7 @@ class UifuncController(BaseController):
 		redis_url = os.environ.get("REDIS_URL")
 	else:
 		redis_url = "localhost"
-	r = redis.Redis(redis_url)
+	r = redis.from_url(redis_url)
 	i = 0 
 	for key in r.scan_iter():
 		marker = {}
@@ -50,7 +50,7 @@ class UifuncController(BaseController):
 		redis_url = os.environ.get("REDIS_URL")
 	else:
 		redis_url = "localhost"
-	r = redis.Redis(redis_url)
+	r = redis.from_url(redis_url)
 	if id is None :
 		return 'Provide a valid space id'
  	elif r.exists(id):
