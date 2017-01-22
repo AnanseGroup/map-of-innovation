@@ -20,6 +20,7 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
 
+    map.connect('/map', controller="uifunc", action="index")
     map.connect('/about', controller="uifunc", action="about")
     map.connect('/about/goals', controller="uifunc", action="goals")
     map.connect('/docs', controller="uifunc", action="userDocs")
