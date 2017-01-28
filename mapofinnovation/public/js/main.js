@@ -91,8 +91,7 @@ for (i=0; i<allSpaces.length; ++i) {
 			}
 			popupText += "</div>";
 			popupText += "<p>"+space.description+"</p>";
-			popupText += "<a href='.'><img src='../assets/space_page.png' class='space-page-button'></a>"
-
+		 	popupText += "<a href='"+space.wiki+"'><img src='../assets/space_page.png' class='space-page-button'></a>"	
 			marker.bindPopup(popupText);
 			markerClusters.addLayer(marker);
 			allMarkers.push(marker);
@@ -151,8 +150,4 @@ $(document).ready(function() {
 		runFilter();
 	});
 
-	$("#contribute-bar-button").click(function(e) {
-		e.preventDefault();
-		$("#contribute-bar-container").toggleClass('closed');
-	});
 });

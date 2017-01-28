@@ -7,8 +7,9 @@
     <link rel="stylesheet" type="text/css" href="/css/MarkerCluster.Default.css" />
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
     <script type='text/javascript' src="/js/leaflet.js"></script>
-		<script type='text/javascript' src='/js/leaflet.markercluster.js'></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type='text/javascript' src='/js/leaflet.markercluster.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="/js/page.js"></script>
     <title>Ananse Innovation Map</title>
 </head>
 <body>
@@ -44,7 +45,7 @@
     	</ul>
     </div>
     <div id="filter-bar">
-            % for a in ("Type", "Theme", "Originator"):
+            % for a in ("Type", "Theme"):
                 <a href="/" id="filter-bar-type-button" class="filter-bar-button" data-filter="${a.lower()}">
                     <span class="filter-button-text">${a}</span>
                     <img src="/assets/plus.png" class="filter-button-plus">

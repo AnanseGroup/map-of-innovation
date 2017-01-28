@@ -5,10 +5,15 @@
 
 .rowTextBlock {
  width: 200px;
- display: inline-block; // display inline with abality to provide width/height
+ min-height: 100px;
+ display: inline-block;
+ vertical-align: top;
 }
 
-
+#wBlockSubTitle{
+font-weight: bold;
+vertical-align: top;
+}
 
 #wTitle{
 font-size: 40pt ;

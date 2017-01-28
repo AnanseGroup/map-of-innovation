@@ -13,66 +13,61 @@
 <div class="w-top-navigation">
 <a href="/" >
     	<img src="/assets/edit_button.png" id="w-top-navigation-bar-edit-button">
-</a>Last updated :${last_updated}
+</a>Last updated :${s_last_updated}
 <a href="/" >
     	<img src="/assets/flag_button.png" id="w-top-navigation-bar-flag-incorrect-button">
 </a>
-</div>
+<!--/div>
  <div class="wnavigation-bar">
     <a href="/" id="wnavigation-bar-article-button" class="navigation-bar-button selected-navigation-bar-button">Article</a>
     <a href="/" id="wnavigation-bar-talk-button" class="navigation-bar-button">Talk</a>
     <a href="/" id="wnavigation-bar-document-revision-button" class="navigation-bar-button">Revision</a>
 	</div>
-</div>
+</div-->
 <div class="wBlockOne">
-<img src="/assets/logoplaceholder.png" alt="#" style="height: 100px; display:block;margin-left: auto;margin-right: auto;">
-<p id="wTitle">${name}</p>
-<p id="wStatus">${status}</p>
+<img src="/assets/Placeholder_logo.png" alt="#" style="height: 100px; display:block;margin-left: auto;margin-right: auto;">
+<p ></p>
+<p id="wTitle">${s_name}</p>
+<p id="wStatus">${s_status}</p>
 <hr />
 </div>
 <div class="wBlockTwo">
 <div class="rowAlign">
   <div class="rowTextBlock">
-  <p>Contact Info</p>
-  <a>${website_url}</a>
+  <p id="wBlockSubTitle">Contact Info</p>
+  <a>${s_primarywebsite | n}</a>
   <br/>
 	<div id="w-address">  
-	<p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${address}</p> 
+	<p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${s_address}</p> 
   </div> 
   </div>
   <div class="rowTextBlock">
-   <p>Social Media</p>
+   <p id="wBlockSubTitle">Social Media</p>
    <div class="social-media-block">
-   <a href="#"  id="w-social-button" >
+   <a href="${s_twitter | n}"  id="w-social-button" >
 	   <img src="/assets/social_twitter.png" class="w-social-button" >
    </a>
-   <a href="#"  id="w-social-gplus" >
-	<img src="/assets/social_google+.png" class="w-social-button">   
+   <a href="${s_googleplus | n}"  id="w-social-gplus" >
+	<img src="/assets/social_google+.png" class="w-social-button">
    </a>
-   <a href="#" id="w-social-meetup">
-	<img src="/assets/social_meetup.png"  class="w-social-button">   
-   </a>
-   <a href="#" id="w-social-fablab" >
-   <img src="/assets/social_fablab.png"  class="w-social-button">   
+   <a href="${s_fablabs_url | n}" id="w-social-fablab" >
+   <img src="/assets/social_fablab.png"  class="w-social-button">
    	</a>
-   <a href="#"  id="w-social-facebook">
-	<img src="/assets/social_facebook.png"  class="w-social-button">      
+   <a href="${s_facebook | n}"  id="w-social-facebook">
+	<img src="/assets/social_facebook.png"  class="w-social-button">
    </a>
-   <a href="#"  id="w-social-jabber">
-	<img src="/assets/social_jabber.png"  class="w-social-button">      
-   </a>
-   <a href="#" id="w-social-linkedin">
-	<img src="/assets/social_linkedin.png"  class="w-social-button">      
+   <a href="${s_jabber | n}"  id="w-social-jabber">
+	<img src="/assets/social_jabber.png"  class="w-social-button">
    </a>
    </div>
   </div>
   <div class="rowTextBlock">
-  <p>Service</p>
-  <ul style="text-align: left;"><li>${primarytype}</li><li>${secondarytype}</li></ul>
+  <p id="wBlockSubTitle">Type</p>
+  <ul style="text-align: left;"><li>${s_primarytype}</li><!--li>${s_secondarytype}</li--></ul>
   </div>
   <div class="rowTextBlock">
-  <p>Capabilities</p>
-  <p>Machines_spaceholder</p>
+  <p id="wBlockSubTitle">Capabilities</p>
+  <p>${s_tools}</p>
   </div>
 </div>
 <hr/>
@@ -80,18 +75,36 @@
 
 <div class="wBlockTh">
 <div  class="w-block-left">
-   <img src="/assets/social_fablab.png" alt="#" style="width:100%;">   
+   <img src="${s_image}" alt="#" style="width:100%;">   
   </div>
 <div class="w-block-right"> 
-	<p id="w-space-description">${space_description}</p>
+	<p id="w-space-description">${s_description}</p>
 </div>
 <br/>
 </div>
-<div id="show-more-section">
-<button id="show-more-button" onclick="show_more_wiki()"></button>
 <hr/>
-</div>
+<div class="wBlockFour">
+        <div class="rowAlign">
+                <div class="rowTextBlock">
+                <p id="wBlockSubTitle">Affiliation</p>
+                <p>${s_networkaffliation}</p>
+                </div>
+                <div class="rowTextBlock">
+                <p id="wBlockSubTitle">Tags</p>
+                <p>${s_tags}</p>
+                </div>
+                <div class="rowTextBlock">
+                <p id="wBlockSubTitle">Services</p>
+                <p>${s_services}</p>
+                </div>
+                <div class="rowTextBlock">
+                <p id="wBlockSubTitle">Members</p>
+                <p>${s_numberofmembers}</p>
+                </div>
 
+        </div>
+        <hr/>
+</div>
 </div>
 </body>
 </html>

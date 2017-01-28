@@ -247,16 +247,20 @@ a img {
 
 .navigation-bar {
 	float: left;
-	line-height: 100px;
+	width: 100%;
+	/*margin-top: 38px;*/
 }
 
 .navigation-bar-button {
+	display: block;
+	float: left;
+	height: 23px;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
 	font-size: 1.17em;
 	color: rgba(0, 0, 0, 0.8);
+	margin-top: 38px;
 	margin-right: 42px;
-	vertical-align: middle;
 	text-decoration: none;
 }
 
@@ -272,7 +276,15 @@ a img {
 }
 
 #navigation-bar-contact-button {
-	height: 100%;
+	float: right;
+	margin-top: 32px;
+	margin-right: 42px;
+	padding: 6px 25px;
+	border: 2px solid;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: .9em;
+	font-weight: 600;
+	text-transform: uppercase;
 }
 
 .search-bar-container {
@@ -443,6 +455,10 @@ a img {
 	color: rgba(0, 0, 0, 0.8);
 }
 
+.page-content .section-header {
+	text-align: center;
+	margin-bottom: 40px;
+}
 .columns {
 	max-width: 900px;
 	width: auto;

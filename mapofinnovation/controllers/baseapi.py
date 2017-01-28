@@ -21,12 +21,12 @@ class BaseapiController(BaseController):
 		redis_url = os.environ.get("REDIS_URL")
 	else:
 		redis_url = "localhost"
-	r = redis.from_url(redis_url)
+	r = redis.Redis(redis_url)
 	for key in r.scan_iter():	
 		row = r.hgetall(key)
 		space={}
 		for i in row:
-			print i
+			#do not show private fields 
 			if i in ("image_url", "g_place_id"):
 				pass
 			else:
@@ -41,7 +41,7 @@ class BaseapiController(BaseController):
 		redis_url = os.environ.get("REDIS_URL")
 	else:
 		redis_url = "localhost"
-	r = redis.from_url(redis_url)
+	r = redis.Redis(redis_url)
 	surl = request.params.get("primary_website")
 	exists = False
 	if surl is None :
@@ -72,7 +72,7 @@ class BaseapiController(BaseController):
 		redis_url = os.environ.get("REDIS_URL")
 	else:
 		redis_url = "localhost"
-	r = redis.from_url(redis_url)
+	r = redis.Redis(redis_url)
 	tparams=request.params
         dparams = {}
         for k,v in tparams.items():
@@ -88,6 +88,6 @@ class BaseapiController(BaseController):
 		redis_url = os.environ.get("REDIS_URL")
 	else:
 		redis_url = "localhost"
-	r = redis.from_url(redis_url)
+	r = redis.Redis(redis_url)
 	r.hset(skey,'archived',True) 
 	return {'sucess':'true'}
