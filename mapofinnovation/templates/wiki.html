@@ -1,0 +1,64 @@
+<%! import random %>
+
+<%include file="/snippets/head.html" />
+
+<%include file="/snippets/header.html" />
+
+<!--%include file="/snippets/wiki-filter-bar.html" /-->
+
+<%include file="/snippets/contribute.html" />
+
+<div class="container wiki-content source-sans">
+	<div class="columns two columns-wide">
+		<!--div>
+			<div class="column-content">
+				<div class="column-header">
+					<h3>Recently Updated</h3>
+					<a href="#_" class="see-all">See All</a>
+				</div>
+			</div>
+		</div-->
+		<div>
+			<div class="column-content">
+				<div class="column-header">
+					<h3>Countries</h3>
+					<a href="#_" class="see-all">See All</a>
+				</div>
+				<ul class="wiki-list">
+					% for country in c.list:
+						<li>${country}<!--span class="count pink">(${random.randrange(1,100)})</span--></li>
+					% endfor
+				</ul>
+			</div>
+		</div>
+		<!--div>
+			<div class="column-content">
+				<div class="column-header">
+					<h3>Services</h3>
+					<a href="#_" class="see-all">See All</a>
+				</div>
+				<ul class="wiki-list">
+					% for service in ("Coworking", "Hosting", "Events", "Selling and trading", "Incubating", "Startups", "Educating", "Vocational training", "Mentoring", "Donating", "Transferring", "Technology", "Co-living", "Repairing", "Manufacturing"):
+						<li>${service} <span class="count pink">(${random.randrange(1,350)})</span></li>
+					% endfor
+				</ul>
+			</div>
+		</div-->
+		<div>
+			<div class="column-content">
+				<div class="column-header">
+					<h3>Themes</h3>
+					<a href="#_" class="see-all">See All</a>
+				</div>
+				<ul class="wiki-list">
+					% for service in ("Coworking", "Hosting", "Events", "Selling and trading", "Incubating", "Startups", "Educating", "Vocational training", "Mentoring", "Donating", "Transferring", "Technology", "Co-living", "Repairing", "Manufacturing"):
+						<li>${service}<!--span class="count pink">(${random.randrange(1,350)})</span--></li>
+					% endfor
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type='text/javascript' src="/js/wiki.js"></script>
+
+<%include file="/snippets/footer.html" />

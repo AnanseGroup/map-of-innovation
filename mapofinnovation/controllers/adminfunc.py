@@ -25,9 +25,10 @@ class AdminfuncController(BaseController):
                 csv_file.seek(0)
                 csv_reader = csv.DictReader(csv_file, dialect=dialect)
                 for row in csv_reader:
-			key = row['name']+str(datetime.now())     
+			tempkey = (str(row['name']+str(datetime.now())))
+			key = ''.join(e for e in tempkey if e.isalnum())
 			#TODO : shift this code to another function
-			row.update({'wiki':('/uifunc/wikipage/'+key).replace(' ', '')})
+			row.update({'wiki':('/uifunc/wikipage/'+key)})
 			row.update({'archived':False})
 			row.update({'verified':True})
 			r_server.hmset(re.sub(' ','',key),row) 

@@ -11,9 +11,9 @@
  
 <div class="wBlockHeader">
 <div class="w-top-navigation">
-<a href="/" >
+<a href="/editspace" >
     	<img src="/assets/edit_button.png" id="w-top-navigation-bar-edit-button">
-</a>Last updated :${s_last_updated}
+</a>
 <a href="/" >
     	<img src="/assets/flag_button.png" id="w-top-navigation-bar-flag-incorrect-button">
 </a>
@@ -29,13 +29,14 @@
 <p ></p>
 <p id="wTitle">${s_name}</p>
 <p id="wStatus">${s_status}</p>
+<p id="w-space-description">${s_description}</p>
 <hr />
 </div>
 <div class="wBlockTwo">
 <div class="rowAlign">
   <div class="rowTextBlock">
   <p id="wBlockSubTitle">Contact Info</p>
-  <a>${s_primarywebsite | n}</a>
+  <a href="http://${s_primarywebsite | n}" target="_blank">${s_primarywebsite | n}</a>
   <br/>
 	<div id="w-address">  
 	<p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${s_address}</p> 
@@ -44,45 +45,32 @@
   <div class="rowTextBlock">
    <p id="wBlockSubTitle">Social Media</p>
    <div class="social-media-block">
-   <a href="${s_twitter | n}"  id="w-social-button" >
+   <a href="${s_twitter | n}"  id="w-social-button" target="_blank">
 	   <img src="/assets/social_twitter.png" class="w-social-button" >
    </a>
-   <a href="${s_googleplus | n}"  id="w-social-gplus" >
+   <a href="${s_googleplus | n}"  id="w-social-gplus" target="_blank">
 	<img src="/assets/social_google+.png" class="w-social-button">
    </a>
-   <a href="${s_fablabs_url | n}" id="w-social-fablab" >
+   <a href="${s_fablabs_url | n}" id="w-social-fablab" target="_blank">
    <img src="/assets/social_fablab.png"  class="w-social-button">
    	</a>
-   <a href="${s_facebook | n}"  id="w-social-facebook">
+   <a href="${s_facebook | n}"  id="w-social-facebook" target="_blank">
 	<img src="/assets/social_facebook.png"  class="w-social-button">
-   </a>
-   <a href="${s_jabber | n}"  id="w-social-jabber">
-	<img src="/assets/social_jabber.png"  class="w-social-button">
    </a>
    </div>
   </div>
   <div class="rowTextBlock">
   <p id="wBlockSubTitle">Type</p>
-  <ul style="text-align: left;"><li>${s_primarytype}</li><!--li>${s_secondarytype}</li--></ul>
+  <ul style="text-align: left;"><li>${s_primarytype}</li></ul>
   </div>
   <div class="rowTextBlock">
-  <p id="wBlockSubTitle">Capabilities</p>
-  <p>${s_tools}</p>
+  <p id="wBlockSubTitle">Source</p>
+  <p>${s_source}</p>
   </div>
 </div>
 <hr/>
 </div>
 
-<div class="wBlockTh">
-<div  class="w-block-left">
-   <img src="${s_image}" alt="#" style="width:100%;">   
-  </div>
-<div class="w-block-right"> 
-	<p id="w-space-description">${s_description}</p>
-</div>
-<br/>
-</div>
-<hr/>
 <div class="wBlockFour">
         <div class="rowAlign">
                 <div class="rowTextBlock">
@@ -94,8 +82,9 @@
                 <p>${s_tags}</p>
                 </div>
                 <div class="rowTextBlock">
-                <p id="wBlockSubTitle">Services</p>
+                <p id="wBlockSubTitle">Services & Capabilities</p>
                 <p>${s_services}</p>
+                <p>${s_tools} </p>
                 </div>
                 <div class="rowTextBlock">
                 <p id="wBlockSubTitle">Members</p>
@@ -105,6 +94,13 @@
         </div>
         <hr/>
 </div>
+
+<div class="wBlockTh">
+<div  class="w-block-left">
+   <img src="${s_image}" alt="" style="" >   
+  </div>
+</div>
+<p>${s_last_updated}</p>
 </div>
 </body>
 </html>

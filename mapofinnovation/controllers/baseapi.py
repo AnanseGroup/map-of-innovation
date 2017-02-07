@@ -61,6 +61,14 @@ class BaseapiController(BaseController):
     
     def _search_space(self,surl):
         #TO DO : implement search function
+	#if os.environ.get("REDIS_URL") :
+        #  redis_url = os.environ.get("REDIS_URL")
+        #else:
+        #  redis_url = "localhost"
+
+        #r = redis.Redis(redis_url)
+	#for key in r.scan_iter():
+		
 	return False
 
     @jsonify

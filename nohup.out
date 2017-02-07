@@ -295,3 +295,707 @@ Traceback (most recent call last):
     result = self.socket.send(data)
 error: [Errno 110] Connection timed out
 WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+Debug at: http://52.197.65.30:5000/_debug/view/1485431165
+Debug at: http://52.197.65.30:5000/_debug/view/1485431166
+Debug at: http://52.197.65.30:5000/_debug/view/1485431167
+Debug at: http://52.197.65.30:5000/_debug/view/1485431168
+Debug at: http://52.197.65.30:5000/_debug/view/1485431169
+ERROR:waitress:Exception when serving /_debug/source_code
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Paste-2.0.3-py2.7.egg/paste/cascade.py", line 130, in __call__
+    return self.apps[-1](environ, start_response)
+  File "/home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Paste-2.0.3-py2.7.egg/paste/registry.py", line 379, in __call__
+    app_iter = self.application(environ, start_response)
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/Pylons-1.0.2-py2.7.egg/pylons/middleware.py", line 155, in __call__
+    self.app, environ, catch_exc_info=True)
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/Pylons-1.0.2-py2.7.egg/pylons/util.py", line 50, in call_wsgi_application
+    app_iter = application(environ, start_response)
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/WebError-0.13.1-py2.7.egg/weberror/evalexception.py", line 259, in __call__
+    return self.debug(req)(environ, start_response)
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/WebError-0.13.1-py2.7.egg/weberror/evalexception.py", line 272, in debug
+    return method(req)
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/WebError-0.13.1-py2.7.egg/weberror/evalexception.py", line 389, in source_code
+    res.unicode_body = 'The module <code>%s</code> does not have an entry in sys.modules' % html_quote(module_name)
+  File "build/bdist.linux-x86_64/egg/webob/response.py", line 431, in _text__set
+    "(not %s)" % type(value))
+TypeError: You can only set Response.text to a unicode string (not <type 'str'>)
+Debug at: http://52.197.65.30:5000/_debug/view/1485431171
+Debug at: http://52.197.65.30:5000/_debug/view/1485431172
+./run: line 3: 23282 Killed                  python runapp.py
+running develop
+/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/setuptools/command/egg_info.py:287: UserWarning: tag_svn_revision is deprecated and will not be honored in a future release
+  "tag_svn_revision is deprecated and will not be honored "
+running egg_info
+writing paster_plugins to map_of_innovation.egg-info/paster_plugins.txt
+writing requirements to map_of_innovation.egg-info/requires.txt
+writing map_of_innovation.egg-info/PKG-INFO
+writing top-level names to map_of_innovation.egg-info/top_level.txt
+writing dependency_links to map_of_innovation.egg-info/dependency_links.txt
+writing entry points to map_of_innovation.egg-info/entry_points.txt
+reading manifest file 'map_of_innovation.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'map_of_innovation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/map-of-innovation.egg-link (link to .)
+map-of-innovation 0.1dev-r0 is already the active version in easy-install.pth
+
+Installed /home/ubuntu/isproject/map-of-innovation
+Processing dependencies for map-of-innovation===0.1dev-r0
+Searching for Pylons==1.0.2
+Best match: Pylons 1.0.2
+Processing Pylons-1.0.2-py2.7.egg
+Pylons 1.0.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Pylons-1.0.2-py2.7.egg
+Searching for WebOb==1.6.2
+Best match: WebOb 1.6.2
+Processing WebOb-1.6.2-py2.7.egg
+WebOb 1.6.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebOb-1.6.2-py2.7.egg
+Searching for MarkupSafe==0.23
+Best match: MarkupSafe 0.23
+Processing MarkupSafe-0.23-py2.7.egg
+MarkupSafe 0.23 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/MarkupSafe-0.23-py2.7.egg
+Searching for Tempita==0.5.3.dev0
+Best match: Tempita 0.5.3.dev0
+Processing Tempita-0.5.3.dev0-py2.7.egg
+Tempita 0.5.3.dev0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Tempita-0.5.3.dev0-py2.7.egg
+Searching for WebTest==2.0.23
+Best match: WebTest 2.0.23
+Processing WebTest-2.0.23-py2.7.egg
+WebTest 2.0.23 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebTest-2.0.23-py2.7.egg
+Searching for WebError==0.13.1
+Best match: WebError 0.13.1
+Processing WebError-0.13.1-py2.7.egg
+WebError 0.13.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebError-0.13.1-py2.7.egg
+Searching for Mako==1.0.5
+Best match: Mako 1.0.5
+Processing Mako-1.0.5-py2.7.egg
+Mako 1.0.5 is already the active version in easy-install.pth
+Installing mako-render script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Mako-1.0.5-py2.7.egg
+Searching for nose==1.3.7
+Best match: nose 1.3.7
+Processing nose-1.3.7-py2.7.egg
+nose 1.3.7 is already the active version in easy-install.pth
+Installing nosetests script to /home/ubuntu/isproject/isenv/bin
+Installing nosetests-2.7 script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/nose-1.3.7-py2.7.egg
+Searching for decorator==4.0.10
+Best match: decorator 4.0.10
+Processing decorator-4.0.10-py2.7.egg
+decorator 4.0.10 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/decorator-4.0.10-py2.7.egg
+Searching for simplejson==3.10.0
+Best match: simplejson 3.10.0
+Processing simplejson-3.10.0-py2.7.egg
+simplejson 3.10.0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/simplejson-3.10.0-py2.7.egg
+Searching for FormEncode==2.0.0a1
+Best match: FormEncode 2.0.0a1
+Processing FormEncode-2.0.0a1-py2.7.egg
+FormEncode 2.0.0a1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/FormEncode-2.0.0a1-py2.7.egg
+Searching for PasteScript==2.0.2
+Best match: PasteScript 2.0.2
+Processing PasteScript-2.0.2-py2.7.egg
+PasteScript 2.0.2 is already the active version in easy-install.pth
+Installing paster script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/PasteScript-2.0.2-py2.7.egg
+Searching for PasteDeploy==1.5.2
+Best match: PasteDeploy 1.5.2
+Processing PasteDeploy-1.5.2-py2.7.egg
+PasteDeploy 1.5.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/PasteDeploy-1.5.2-py2.7.egg
+Searching for Paste==2.0.3
+Best match: Paste 2.0.3
+Processing Paste-2.0.3-py2.7.egg
+Paste 2.0.3 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Paste-2.0.3-py2.7.egg
+Searching for Beaker==1.8.1
+Best match: Beaker 1.8.1
+Processing Beaker-1.8.1-py2.7.egg
+Beaker 1.8.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Beaker-1.8.1-py2.7.egg
+Searching for WebHelpers==1.3
+Best match: WebHelpers 1.3
+Processing WebHelpers-1.3-py2.7.egg
+WebHelpers 1.3 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebHelpers-1.3-py2.7.egg
+Searching for Routes==2.3.1
+Best match: Routes 2.3.1
+Processing Routes-2.3.1-py2.7.egg
+Routes 2.3.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Routes-2.3.1-py2.7.egg
+Searching for beautifulsoup4==4.5.1
+Best match: beautifulsoup4 4.5.1
+Processing beautifulsoup4-4.5.1-py2.7.egg
+beautifulsoup4 4.5.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/beautifulsoup4-4.5.1-py2.7.egg
+Searching for waitress==1.0.1
+Best match: waitress 1.0.1
+Processing waitress-1.0.1-py2.7.egg
+waitress 1.0.1 is already the active version in easy-install.pth
+Installing waitress-serve script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg
+Searching for six==1.10.0
+Best match: six 1.10.0
+Processing six-1.10.0-py2.7.egg
+six 1.10.0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/six-1.10.0-py2.7.egg
+Searching for Pygments==2.1.3
+Best match: Pygments 2.1.3
+Processing Pygments-2.1.3-py2.7.egg
+Pygments 2.1.3 is already the active version in easy-install.pth
+Installing pygmentize script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Pygments-2.1.3-py2.7.egg
+Searching for funcsigs==1.0.2
+Best match: funcsigs 1.0.2
+Processing funcsigs-1.0.2-py2.7.egg
+funcsigs 1.0.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/funcsigs-1.0.2-py2.7.egg
+Searching for repoze.lru==0.6
+Best match: repoze.lru 0.6
+Processing repoze.lru-0.6-py2.7.egg
+repoze.lru 0.6 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/repoze.lru-0.6-py2.7.egg
+Finished processing dependencies for map-of-innovation===0.1dev-r0
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+Debug at: http://52.197.65.30:5000/_debug/view/1485929156
+Debug at: http://52.197.65.30:5000/_debug/view/1485929157
+<string>:2: Warning: JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+./run: line 3: 21842 Killed                  python runapp.py
+running develop
+/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/setuptools/command/egg_info.py:287: UserWarning: tag_svn_revision is deprecated and will not be honored in a future release
+  "tag_svn_revision is deprecated and will not be honored "
+running egg_info
+writing paster_plugins to map_of_innovation.egg-info/paster_plugins.txt
+writing requirements to map_of_innovation.egg-info/requires.txt
+writing map_of_innovation.egg-info/PKG-INFO
+writing top-level names to map_of_innovation.egg-info/top_level.txt
+writing dependency_links to map_of_innovation.egg-info/dependency_links.txt
+writing entry points to map_of_innovation.egg-info/entry_points.txt
+reading manifest file 'map_of_innovation.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'map_of_innovation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/map-of-innovation.egg-link (link to .)
+map-of-innovation 0.1dev-r0 is already the active version in easy-install.pth
+
+Installed /home/ubuntu/isproject/map-of-innovation
+Processing dependencies for map-of-innovation===0.1dev-r0
+Searching for Pylons==1.0.2
+Best match: Pylons 1.0.2
+Processing Pylons-1.0.2-py2.7.egg
+Pylons 1.0.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Pylons-1.0.2-py2.7.egg
+Searching for WebOb==1.6.2
+Best match: WebOb 1.6.2
+Processing WebOb-1.6.2-py2.7.egg
+WebOb 1.6.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebOb-1.6.2-py2.7.egg
+Searching for MarkupSafe==0.23
+Best match: MarkupSafe 0.23
+Processing MarkupSafe-0.23-py2.7.egg
+MarkupSafe 0.23 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/MarkupSafe-0.23-py2.7.egg
+Searching for Tempita==0.5.3.dev0
+Best match: Tempita 0.5.3.dev0
+Processing Tempita-0.5.3.dev0-py2.7.egg
+Tempita 0.5.3.dev0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Tempita-0.5.3.dev0-py2.7.egg
+Searching for WebTest==2.0.23
+Best match: WebTest 2.0.23
+Processing WebTest-2.0.23-py2.7.egg
+WebTest 2.0.23 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebTest-2.0.23-py2.7.egg
+Searching for WebError==0.13.1
+Best match: WebError 0.13.1
+Processing WebError-0.13.1-py2.7.egg
+WebError 0.13.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebError-0.13.1-py2.7.egg
+Searching for Mako==1.0.5
+Best match: Mako 1.0.5
+Processing Mako-1.0.5-py2.7.egg
+Mako 1.0.5 is already the active version in easy-install.pth
+Installing mako-render script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Mako-1.0.5-py2.7.egg
+Searching for nose==1.3.7
+Best match: nose 1.3.7
+Processing nose-1.3.7-py2.7.egg
+nose 1.3.7 is already the active version in easy-install.pth
+Installing nosetests script to /home/ubuntu/isproject/isenv/bin
+Installing nosetests-2.7 script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/nose-1.3.7-py2.7.egg
+Searching for decorator==4.0.10
+Best match: decorator 4.0.10
+Processing decorator-4.0.10-py2.7.egg
+decorator 4.0.10 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/decorator-4.0.10-py2.7.egg
+Searching for simplejson==3.10.0
+Best match: simplejson 3.10.0
+Processing simplejson-3.10.0-py2.7.egg
+simplejson 3.10.0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/simplejson-3.10.0-py2.7.egg
+Searching for FormEncode==2.0.0a1
+Best match: FormEncode 2.0.0a1
+Processing FormEncode-2.0.0a1-py2.7.egg
+FormEncode 2.0.0a1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/FormEncode-2.0.0a1-py2.7.egg
+Searching for PasteScript==2.0.2
+Best match: PasteScript 2.0.2
+Processing PasteScript-2.0.2-py2.7.egg
+PasteScript 2.0.2 is already the active version in easy-install.pth
+Installing paster script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/PasteScript-2.0.2-py2.7.egg
+Searching for PasteDeploy==1.5.2
+Best match: PasteDeploy 1.5.2
+Processing PasteDeploy-1.5.2-py2.7.egg
+PasteDeploy 1.5.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/PasteDeploy-1.5.2-py2.7.egg
+Searching for Paste==2.0.3
+Best match: Paste 2.0.3
+Processing Paste-2.0.3-py2.7.egg
+Paste 2.0.3 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Paste-2.0.3-py2.7.egg
+Searching for Beaker==1.8.1
+Best match: Beaker 1.8.1
+Processing Beaker-1.8.1-py2.7.egg
+Beaker 1.8.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Beaker-1.8.1-py2.7.egg
+Searching for WebHelpers==1.3
+Best match: WebHelpers 1.3
+Processing WebHelpers-1.3-py2.7.egg
+WebHelpers 1.3 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebHelpers-1.3-py2.7.egg
+Searching for Routes==2.3.1
+Best match: Routes 2.3.1
+Processing Routes-2.3.1-py2.7.egg
+Routes 2.3.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Routes-2.3.1-py2.7.egg
+Searching for beautifulsoup4==4.5.1
+Best match: beautifulsoup4 4.5.1
+Processing beautifulsoup4-4.5.1-py2.7.egg
+beautifulsoup4 4.5.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/beautifulsoup4-4.5.1-py2.7.egg
+Searching for waitress==1.0.1
+Best match: waitress 1.0.1
+Processing waitress-1.0.1-py2.7.egg
+waitress 1.0.1 is already the active version in easy-install.pth
+Installing waitress-serve script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg
+Searching for six==1.10.0
+Best match: six 1.10.0
+Processing six-1.10.0-py2.7.egg
+six 1.10.0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/six-1.10.0-py2.7.egg
+Searching for Pygments==2.1.3
+Best match: Pygments 2.1.3
+Processing Pygments-2.1.3-py2.7.egg
+Pygments 2.1.3 is already the active version in easy-install.pth
+Installing pygmentize script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Pygments-2.1.3-py2.7.egg
+Searching for funcsigs==1.0.2
+Best match: funcsigs 1.0.2
+Processing funcsigs-1.0.2-py2.7.egg
+funcsigs 1.0.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/funcsigs-1.0.2-py2.7.egg
+Searching for repoze.lru==0.6
+Best match: repoze.lru 0.6
+Processing repoze.lru-0.6-py2.7.egg
+repoze.lru 0.6 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/repoze.lru-0.6-py2.7.egg
+Finished processing dependencies for map-of-innovation===0.1dev-r0
+<string>:2: Warning: JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+./run: line 3: 32679 Killed                  python runapp.py
+running develop
+/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/setuptools/command/egg_info.py:287: UserWarning: tag_svn_revision is deprecated and will not be honored in a future release
+  "tag_svn_revision is deprecated and will not be honored "
+running egg_info
+writing paster_plugins to map_of_innovation.egg-info/paster_plugins.txt
+writing requirements to map_of_innovation.egg-info/requires.txt
+writing map_of_innovation.egg-info/PKG-INFO
+writing top-level names to map_of_innovation.egg-info/top_level.txt
+writing dependency_links to map_of_innovation.egg-info/dependency_links.txt
+writing entry points to map_of_innovation.egg-info/entry_points.txt
+reading manifest file 'map_of_innovation.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'map_of_innovation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/map-of-innovation.egg-link (link to .)
+map-of-innovation 0.1dev-r0 is already the active version in easy-install.pth
+
+Installed /home/ubuntu/isproject/map-of-innovation
+Processing dependencies for map-of-innovation===0.1dev-r0
+Searching for Pylons==1.0.2
+Best match: Pylons 1.0.2
+Processing Pylons-1.0.2-py2.7.egg
+Pylons 1.0.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Pylons-1.0.2-py2.7.egg
+Searching for WebOb==1.6.2
+Best match: WebOb 1.6.2
+Processing WebOb-1.6.2-py2.7.egg
+WebOb 1.6.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebOb-1.6.2-py2.7.egg
+Searching for MarkupSafe==0.23
+Best match: MarkupSafe 0.23
+Processing MarkupSafe-0.23-py2.7.egg
+MarkupSafe 0.23 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/MarkupSafe-0.23-py2.7.egg
+Searching for Tempita==0.5.3.dev0
+Best match: Tempita 0.5.3.dev0
+Processing Tempita-0.5.3.dev0-py2.7.egg
+Tempita 0.5.3.dev0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Tempita-0.5.3.dev0-py2.7.egg
+Searching for WebTest==2.0.23
+Best match: WebTest 2.0.23
+Processing WebTest-2.0.23-py2.7.egg
+WebTest 2.0.23 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebTest-2.0.23-py2.7.egg
+Searching for WebError==0.13.1
+Best match: WebError 0.13.1
+Processing WebError-0.13.1-py2.7.egg
+WebError 0.13.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebError-0.13.1-py2.7.egg
+Searching for Mako==1.0.5
+Best match: Mako 1.0.5
+Processing Mako-1.0.5-py2.7.egg
+Mako 1.0.5 is already the active version in easy-install.pth
+Installing mako-render script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Mako-1.0.5-py2.7.egg
+Searching for nose==1.3.7
+Best match: nose 1.3.7
+Processing nose-1.3.7-py2.7.egg
+nose 1.3.7 is already the active version in easy-install.pth
+Installing nosetests script to /home/ubuntu/isproject/isenv/bin
+Installing nosetests-2.7 script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/nose-1.3.7-py2.7.egg
+Searching for decorator==4.0.10
+Best match: decorator 4.0.10
+Processing decorator-4.0.10-py2.7.egg
+decorator 4.0.10 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/decorator-4.0.10-py2.7.egg
+Searching for simplejson==3.10.0
+Best match: simplejson 3.10.0
+Processing simplejson-3.10.0-py2.7.egg
+simplejson 3.10.0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/simplejson-3.10.0-py2.7.egg
+Searching for FormEncode==2.0.0a1
+Best match: FormEncode 2.0.0a1
+Processing FormEncode-2.0.0a1-py2.7.egg
+FormEncode 2.0.0a1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/FormEncode-2.0.0a1-py2.7.egg
+Searching for PasteScript==2.0.2
+Best match: PasteScript 2.0.2
+Processing PasteScript-2.0.2-py2.7.egg
+PasteScript 2.0.2 is already the active version in easy-install.pth
+Installing paster script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/PasteScript-2.0.2-py2.7.egg
+Searching for PasteDeploy==1.5.2
+Best match: PasteDeploy 1.5.2
+Processing PasteDeploy-1.5.2-py2.7.egg
+PasteDeploy 1.5.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/PasteDeploy-1.5.2-py2.7.egg
+Searching for Paste==2.0.3
+Best match: Paste 2.0.3
+Processing Paste-2.0.3-py2.7.egg
+Paste 2.0.3 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Paste-2.0.3-py2.7.egg
+Searching for Beaker==1.8.1
+Best match: Beaker 1.8.1
+Processing Beaker-1.8.1-py2.7.egg
+Beaker 1.8.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Beaker-1.8.1-py2.7.egg
+Searching for WebHelpers==1.3
+Best match: WebHelpers 1.3
+Processing WebHelpers-1.3-py2.7.egg
+WebHelpers 1.3 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/WebHelpers-1.3-py2.7.egg
+Searching for Routes==2.3.1
+Best match: Routes 2.3.1
+Processing Routes-2.3.1-py2.7.egg
+Routes 2.3.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Routes-2.3.1-py2.7.egg
+Searching for beautifulsoup4==4.5.1
+Best match: beautifulsoup4 4.5.1
+Processing beautifulsoup4-4.5.1-py2.7.egg
+beautifulsoup4 4.5.1 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/beautifulsoup4-4.5.1-py2.7.egg
+Searching for waitress==1.0.1
+Best match: waitress 1.0.1
+Processing waitress-1.0.1-py2.7.egg
+waitress 1.0.1 is already the active version in easy-install.pth
+Installing waitress-serve script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg
+Searching for six==1.10.0
+Best match: six 1.10.0
+Processing six-1.10.0-py2.7.egg
+six 1.10.0 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/six-1.10.0-py2.7.egg
+Searching for Pygments==2.1.3
+Best match: Pygments 2.1.3
+Processing Pygments-2.1.3-py2.7.egg
+Pygments 2.1.3 is already the active version in easy-install.pth
+Installing pygmentize script to /home/ubuntu/isproject/isenv/bin
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/Pygments-2.1.3-py2.7.egg
+Searching for funcsigs==1.0.2
+Best match: funcsigs 1.0.2
+Processing funcsigs-1.0.2-py2.7.egg
+funcsigs 1.0.2 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/funcsigs-1.0.2-py2.7.egg
+Searching for repoze.lru==0.6
+Best match: repoze.lru 0.6
+Processing repoze.lru-0.6-py2.7.egg
+repoze.lru 0.6 is already the active version in easy-install.pth
+
+Using /home/ubuntu/isproject/isenv/lib/python2.7/site-packages/repoze.lru-0.6-py2.7.egg
+Finished processing dependencies for map-of-innovation===0.1dev-r0
+<string>:2: Warning: JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 113] No route to host
+ERROR:waitress:Socket error
+Traceback (most recent call last):
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/home/ubuntu/isproject/isenv/local/lib/python2.7/site-packages/waitress-1.0.1-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/usr/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 110] Connection timed out
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings
+WARNING:pylons.decorators:JSON responses with Array envelopes are susceptible to cross-site data leak attacks, see http://wiki.pylonshq.com/display/pylonsfaq/Warnings

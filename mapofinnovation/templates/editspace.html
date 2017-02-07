@@ -1,0 +1,28 @@
+<%include file="/snippets/head.html" />
+
+<%include file="/snippets/header.html" />
+<link rel="stylesheet" type="text/css" href="/css/form.css"/>
+
+<div class="container">  
+<form name="test" method="get" action="/baseapi/changeSpace">
+    <fieldset>
+      <input placeholder="Name" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+      <input placeholder="Email Address" type="email" tabindex="2" required>
+      </fieldset>
+	<fieldset>
+	<input placeholder="Phone Number" type="tel" tabindex="3" required>
+    	</fieldset>
+	<fieldset>
+	  <input placeholder="WebSite" type="url" tabindex="4" required>
+      	</fieldset>
+	<fieldset>
+	<textarea placeholder="Address" tabindex="5" required></textarea>
+   	</fieldset>
+	<fieldset>
+	   <button name="submit" type="submit" id="contact-submit">Submit</button>
+    </fieldset>
+  </form>
+</div>
+</form>
