@@ -104,11 +104,13 @@ mapofinnovation/public/css/stylesheet.css
 mapofinnovation/public/css/wikipage.css
 mapofinnovation/public/js/.DS_Store
 mapofinnovation/public/js/Datafields merge doc.docx
+mapofinnovation/public/js/editform.js
 mapofinnovation/public/js/leaflet.js
 mapofinnovation/public/js/leaflet.markercluster.js
 mapofinnovation/public/js/map.js
 mapofinnovation/public/js/page.js
 mapofinnovation/public/js/wiki.js
+mapofinnovation/public/js/wikilist.js
 mapofinnovation/public/snippets/wiki-filter-bar.html
 mapofinnovation/templates/404.html
 mapofinnovation/templates/about.html
@@ -116,10 +118,13 @@ mapofinnovation/templates/coming-soon.html
 mapofinnovation/templates/contact.html
 mapofinnovation/templates/developer-documentation.html
 mapofinnovation/templates/editspace.html
+mapofinnovation/templates/formedit.html
 mapofinnovation/templates/goals.html
 mapofinnovation/templates/makermap.html
+mapofinnovation/templates/thanks.html
 mapofinnovation/templates/user-documentation.html
 mapofinnovation/templates/wiki.html
+mapofinnovation/templates/wikilist.html
 mapofinnovation/templates/wikipage.html
 mapofinnovation/templates/snippets/contribute.html
 mapofinnovation/templates/snippets/docs-menu.html

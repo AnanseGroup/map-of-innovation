@@ -3,10 +3,19 @@
     <a class="navigation-bar-logo" href="/">
       <img src="/assets/logo_ananse.png" id="navigation-bar-home">
     </a>
-    <a href="/map" id="navigation-bar-map-button" class="navigation-bar-button selected-navigation-bar-button">MAP</a>
-    <a href="/about" id="navigation-bar-about-button" class="navigation-bar-button">ABOUT</a>
-    <a href="/docs" id="navigation-bar-document-licensing-button" class="navigation-bar-button">DOCUMENTATION & LICENSING</a>
-    <a href="/wiki" id="navigation-bar-wiki-button" class="navigation-bar-button">WIKI</a>
+	% for menu_item in ("map", "about", "docs", "wiki"):
+        % if '/'+menu_item == url.current() :
+            <a href="${url('/'+menu_item)}" class="navigation-bar-button selected-navigation-bar-button">
+        % else :
+            <a href="${url('/'+menu_item)}" class="navigation-bar-button">
+        % endif
+        % if menu_item == 'docs':
+            DOCUMENTATION & LICENSING
+        % else :
+            ${menu_item.upper()}
+        % endif
+	</a>
+	%endfor
     <a href="mailto:anansegroup@gmail.com" id="navigation-bar-contact-button" class="navigation-right dark-blue">Contact Us</a>	
 </div>
 </div>

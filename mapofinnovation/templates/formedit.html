@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<%include file="/snippets/head.html" />
+
+<%include file="/snippets/header.html" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="/js/editform.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/form.css"/>
+<form id="rendered-form" name="editspace" method="get" action="/baseapi/changeSpace/${request.params.get('id')}">
+<fieldset>
+<div class="fb-text form-group field-text-name"><label for="text-name" class="fb-text-label">Name <span class="required">*</span> </label> <input type="text" required="" class="form-control" name="name" id="text-name" aria-required="true"></div>
+</fieldset>
+<fieldset>
+<div class="fb-select form-group field-primary-type"><label for="primary-type" class="fb-select-label">Type <span class="required">*</span> </label><select type="select" required="" class="form-control" name="primary_type" id="primary-type" aria-required="true"><option value="Hub">Hub</option><option value="Workshop">Workshop</option><option value="Event">Event</option>
+<option value="Gallery">Gallery</option>
+<option value="Retail">Retail</option>
+<option value="Virtual">Virtual</option>
+<option value="Cluster">Cluster</option>
+<option value="Ecovillage">Ecovillage</option>
+</select></div>
+<fieldset>
+<fieldset>
+<div class="fb-undefined form-group field-textarea-address"><label for="textarea-address" class="fb-textarea-label">Street Address  </label><textarea type="textarea" class="form-control" name="street_address" id="textarea-address"></textarea></div>
+</fieldset>
+<fieldset>
+<div class="fb-text form-group field-text-city"><label for="text-city" class="fb-text-label">City <span class="required">*</span> </label> <input type="text" required="" class="form-control" name="city" id="text-city" aria-required="true"></div>
+</fieldset>
+<fieldset>
+<div class="fb-text form-group field-text-country"><label for="text-country" class="fb-text-label">Country <span class="required">*</span> </label> <input type="text" required="" class="form-control" name="country" id="text-country" aria-required="true"></div>
+</fieldset>
+<fieldset>
+<div class="fb-email form-group field-text-email"><label for="text-email" class="fb-email-label">Email <span class="required">*</span> </label> <input type="email" required="" class="form-control" name="email" id="text-email" aria-required="true"></div>
+</fieldset>
+<fieldset>
+<div class="fb-undefined form-group field-textarea-description"><label for="textarea-description" class="fb-textarea-label">Description  </label><textarea type="textarea" class="form-control" name="description" id="textarea-description"></textarea></div>
+</fieldset>
+<fieldset>
+<div class="fb-number form-group field-number-phone"><label for="number-phone" class="fb-number-label">Phone Number  </label> <input type="number" class="form-control" name="phone" id="number-phone"></div>
+</fieldset>
+<fieldset> 
+<br/>
+<div class="fb-checkbox form-group field-checkbox-services"><label for="checkbox-services" class="fb-checkbox-group-label">Services  </label><br/><div class="checkbox-group"><input value="coworking" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-0" checked=""> <label for="checkbox-services-0">Coworking</label><br><input value="Maker" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-1"> <label for="checkbox-services-1">Making</label><br><input value="Hosting events" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-2"> <label for="checkbox-services-2">Hosting Events</label><br><input value="Selling and trading" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-3" checked=""> <label for="checkbox-services-3">Selling and trading</label><br>
+<input value="Incubating startups" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-4" checked=""> <label for="checkbox-services-4">Incubating Startups</label><br>
+<input value="Educating" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-5" checked=""> <label for="checkbox-services-5">Educating</label><br>
+<input value="Vocational training" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-6" checked=""> <label for="checkbox-services-6">Vocational training</label><br>
+<input value="Investing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-7" checked=""> <label for="checkbox-services-7">Investing</label><br>
+<input value="Mentoring" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-8" checked=""> <label for="checkbox-services-8">Mentoring</label><br>
+<input value="Donating" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-9" checked=""> <label for="checkbox-services-9">Donating</label><br>
+<input value="Transferring technology" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-10" checked=""> <label for="checkbox-services-10">Transferring technology</label><br>
+<input value="Coliving" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-11" checked=""> <label for="checkbox-services-11">Coliving</label><br>
+<input value="Repairing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-12" checked=""> <label for="checkbox-services-12">Repairing</label><br>
+<input value="Manufacturing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-13" checked=""> <label for="checkbox-services-13">Manufacturing</label><br>
+<input value="Prototyping" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-14" checked=""> <label for="checkbox-services-14">Prototyping</label><br>
+<input value="Researching" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-15" checked=""> <label for="checkbox-services-15">Researching</label><br>
+</div></div>
+</fieldset>
+<div class="fb-select form-group field-select-status"><label for="select-status" class="fb-select-label">Status <span class="required">*</span> </label><select type="select" required="" class="form-control" name="status" id="select-status" aria-required="true"><option value="open" selected="true">Open</option><option value="closed">Closed</option><option value="planned">Planned </option></select></div>
+<fieldset>
+<div class="fb-undefined form-group field-textarea-tools"><label for="textarea-tools" class="fb-textarea-label">Tools  </label><textarea type="textarea" class="form-control" name="tools" id="textarea-tools"></textarea></div>
+</fieldset>
+<fieldset>
+<div class="fb-undefined form-group field-textarea-tags"><label for="textarea-tags" class="fb-textarea-label">Tags </label><textarea type="textarea" class="form-control" name="tags" id="textarea-tags"></textarea></div>
+</fieldset>
+<fieldset>
+<div class="fb-select form-group field-primary-type"><label for="members" class="fb-select-label">Members <span class="required">*</span> </label><select type="select" required="" class="form-control" name="number_of_members" id="members" aria-required="true">
+<option value="1"> Unknown</option>
+<option value="2">1-50</option>
+<option value="3">51-100</option>
+<option value="4">100-300</option>
+<option value="5">300+</option>
+</select></div>
+</fieldset>
+<fieldset>
+<div class="fb-select form-group field-primary-type"><label for="affiliation" class="fb-select-label">Affiliation <span class="required">*</span> </label><select type="select" required="" class="form-control" name="network_affiliation" id="affiliation" aria-required="true">
+<option value="1"> Hackerspaces.org</option>
+<option value="2">Fablabs</option>
+<option value="3">Impact Hub</option>
+<option value="4">Afri Lab</option>
+<option value="5">Global Eco Village Network</option>
+<option value="6"> Hackerbases</option>
+<option value="7">Maker Faire</option>
+<option value="8">Mens Shed</option>
+<option value="9">RepairCafe</option>
+<option value="10">Tech Shop</option>
+<option value="11"> Global Innovation Gathering</option>
+<option value="12">Other</option>
+</select></div>
+</fieldset>
+ <button type="cancel" id="space-cancel">Cancel</button>
+ <button type="submit" id="space-submit">Submit</button>
+</form>
+<%include file="/snippets/footer.html" />

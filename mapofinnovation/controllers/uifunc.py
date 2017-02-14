@@ -3,6 +3,8 @@ import json
 import redis
 import sys
 import urllib
+import json
+import urllib2
 import os
 
 from urlparse import urlparse
@@ -10,6 +12,7 @@ from pylons import request, response, session, tmpl_context as c, url
 from pylons.decorators import jsonify
 from pylons.controllers.util import abort, redirect
 from mapofinnovation.lib.base import BaseController, render
+
 
 log = logging.getLogger(__name__)
 class UifuncController(BaseController):
@@ -25,6 +28,7 @@ class UifuncController(BaseController):
       else:
         redis_url = "localhost"
       r = redis.Redis(redis_url)
+      
       if id is None :
         return 'Provide a valid space id'
       elif r.exists(id):
@@ -51,7 +55,7 @@ class UifuncController(BaseController):
 	else: 
 		s_last_updated = 'Last Updated : '+str(data['last_updated'])
 	s_tags=s_services+''+str(data['network_affiliation'])
-	extra_vars={'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']),'s_status':str(data['status']),'s_primarywebsite':s_primary_website,'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_tags':s_tags,'s_secondarytype':' ','s_description':str(data['description']),'s_address':s_address,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
+	extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']),'s_status':str(data['status']),'s_primarywebsite':s_primary_website,'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_tags':s_tags,'s_secondarytype':' ','s_description':str(data['description']),'s_address':s_address,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
         return render('/wikipage.html',extra_vars)
       else :
         return 'There is no space with this id. Please recheck and submit'
@@ -80,8 +84,13 @@ class UifuncController(BaseController):
 		c.list = c_list
         return render('/wiki.html')
 	
+    def wikilist(self,id=None):
+	c.filtertype = id
+	c.filterparam = request.params.get("name")
+	return render('/wikilist.html')	
+
     def contactus(self):
 	return render('/contact.html')
 
-    def editspace(self):
-	return render('/editspace.html')
+    def editspace(self,id=None):
+	return render('/formedit.html')

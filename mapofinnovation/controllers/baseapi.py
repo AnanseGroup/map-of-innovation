@@ -53,41 +53,62 @@ class BaseapiController(BaseController):
 		dparams = {}
 		for k,v in tparams.items():
 			dparams.update({k:v})
-	dparams.update({'archived':False})
-	dparams.update({'verified':False})
-	skey = request.params.get("name")+str(datetime.now())
-	r.hmset(re.sub(' ','',skey),dparams)
+		dparams.update({'archived':False})
+		dparams.update({'verified':False})
+		skey = request.params.get("name")+str(datetime.now())
+		r.hmset(re.sub(' ','',skey),dparams)
 	return {'sucess':'true'}
-    
+	    
     def _search_space(self,surl):
-        #TO DO : implement search function
-	#if os.environ.get("REDIS_URL") :
-        #  redis_url = os.environ.get("REDIS_URL")
-        #else:
-        #  redis_url = "localhost"
-
-        #r = redis.Redis(redis_url)
-	#for key in r.scan_iter():
-		
+	if os.environ.get("REDIS_URL") :
+          redis_url = os.environ.get("REDIS_URL")
+        else:
+          redis_url = "localhost"
+        r = redis.Redis(redis_url)
+	for key in r.scan_iter():
+		if (r.hget(key,"primary_website")== str(surl)):
+			return True
 	return False
 
     @jsonify
-    def changeSpace(self):
+    def getSpace(self):
+	#get a space details
+        skey = request.params.get("id")
+	if os.environ.get("REDIS_URL") :
+                redis_url = os.environ.get("REDIS_URL")
+        else:
+                redis_url = "localhost"
+        r = redis.Redis(redis_url)
+        space_details = r.hgetall(skey)
+	del space_details["g_place_id"]
+        return space_details
+
+
+    def changeSpace(self,id=None):
 	#change a space
 	#TO DO: implement change space for verified space
-	skey = request.params.get("id")
 	if os.environ.get("REDIS_URL") :
 		redis_url = os.environ.get("REDIS_URL")
 	else:
 		redis_url = "localhost"
 	r = redis.Redis(redis_url)
-	tparams=request.params
-        dparams = {}
-        for k,v in tparams.items():
-        	dparams.update({k:v})
-	r.hmset(skey,dparams)
-	return {'sucess':'true'}
-
+	params=request.params
+        temp_params = {}
+        for k,v in params.items():
+        	if(temp_params.has_key(k)) :	
+			if type(temp_params[k]) is list :
+				temp_params[k].append(v)
+			else:
+				tmp = temp_params[k]
+				temp_params[k]= []
+				temp_params[k].append(tmp)
+				temp_params[k].append(v)
+		else :
+			temp_params.update({k:v})
+	print temp_params
+	#r.hmset(id,temp_params)
+	return render('/thanks.html',{'s_id':id})
+   		
     @jsonify
     def archiveSpace(self):
 	#archive a space

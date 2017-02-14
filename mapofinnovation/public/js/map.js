@@ -41,6 +41,7 @@ var myIcon = L.icon({
 var allMarkers = [];
 
 var noLocation = [];
+var placeInfoRequired = ['name', 'city', 'country', 'primary_type', 'theme'];
 
 $.get('baseapi/getAllSpaces', function(spaces) {
 	buildMarkers(spaces);
@@ -53,7 +54,6 @@ function buildMarkers(allSpaces) {
 			try {
 				var marker = L.marker([space.latitude, space.longitude], {icon: myIcon});
 
-				var placeInfoRequired = ['name', 'city', 'country', 'primary_type', 'theme'];
 				var placeData = {}
 				placeInfoRequired.forEach(function(key) {
 					if (typeof space[key] !== 'undefined') {
@@ -66,45 +66,9 @@ function buildMarkers(allSpaces) {
 						}
 					}
 				});
-				console.log(placeData);
-				marker.placeData = placeData;	
-				var popupText = "<h3>"+space.name+"</h3>"+
-								"<p><img src='../assets/pin2.png' height='14' class='popup-location-text'><span style='margin-bottom:3px;position:fixed;'>";
-				if (space.city != "") {
-					popupText += space.city+", "+space.country;
-				} else {
-					popupText += space.country;
-				}
-				popupText += "</span></p>"+"<a class='popup-website-link' target='_blank' href='http://"+space.primary_website+"'>"+space.primary_website+"</a><div class='popup-type-container'>"; 
-
-				var types = [];
-				if (space.primary_type.trim() != "" && types.indexOf(space.primary_type) === -1) {
-					types.push(space.primary_type);
-				} else {
-					console.log("No primary type: " + space.name);
-}
-				if (space.multitypes != "") {
-					var multis = space.types_multiple.split(", ");
-					for (j=0; j<multis.length; j++) {
-						types.push(multis[j]);
-					}
- 				}
-				for (k=0; k<types.length; k++) {
-					var color = "";
-					var type = types[k];
-					type = allTypes[type.toLowerCase().trim()]
-					if (type) {
-			  			popupText += "<div class='popup-type-color " + type.toLowerCase().replace(" ", "-")+"-color" + "'></div><span class='popup-type-text'>"
-			  						+type+"</span>";
-					} else {
-						console.log("Unknown type: "+types[k]);
-					}
-				}
-				popupText += "</div>";
-				popupText += "<p>"+space.description+"</p>";
-				popupText += "<a href='"+space.wiki+"'><img src='../assets/space_page.png' class='space-page-button'></a>"
-
-				marker.bindPopup(popupText);
+				marker.placeData = placeData;
+				var popup = createPopup(space);
+				marker.bindPopup(popup, {minWidth: "250"});
 				markerClusters.addLayer(marker);
 				allMarkers.push(marker);
 			} catch (e) {
@@ -118,7 +82,50 @@ function buildMarkers(allSpaces) {
 	$("#loading").fadeOut();
 	}
 }
+function createPopup(space) {
+	
+	var popupText = "<div class='popup-header'>";
+	popupText += "<h3>"+space.name+"</h3>";
+	popupText += "</div>";
+	popupText += "<p><img src='../assets/pin2.png' height='14' class='popup-location-text'><span style='margin-bottom:3px;position:fixed;'>";
 
+	if (space.city != "") {
+		popupText += space.city+", "+space.country;
+ 	} else {
+		popupText += space.country;
+ 	}
+	popupText += "</span></p>"+"<a class='popup-website-link' target='_blank' href='http://"+space.primary_website+"'>"+space.primary_website+"</a><div class='popup-type-container'>"; 
+
+	var types = [];
+	if (space.primary_type.trim() != "" && types.indexOf(space.primary_type) === -1) {
+		types.push(space.primary_type);
+	} else {
+		console.log("No primary type: " + space.name);
+	}
+	if (space.multitypes != "") {
+		var multis = space.types_multiple.split(", ");
+		for (j=0; j<multis.length; j++) {
+			types.push(multis[j]);
+		}
+	}
+	for (k=0; k<types.length; k++) {
+		var color = "";
+		var type = types[k];
+		type = allTypes[type.toLowerCase().trim()]
+		if (type) {
+				popupText += "<div class='popup-type-color " + type.toLowerCase().replace(" ", "-")+"-color" + "'></div><span class='popup-type-text'>"
+							+type+"</span>";
+		} else {
+			console.log("Unknown type: "+types[k]);
+		}
+ 	}
+	popupText += "</div>";
+	popupText += "<p>"+space.description+"</p>";			
+	popupText += "<a href='"+space.wiki+"'><img src='../assets/space_page.png' class='space-page-button'></a>";
+
+	return popupText;
+ }
+ 
 var appliedFilters = [];
 
 function runFilter() {	
@@ -168,8 +175,4 @@ $(document).ready(function() {
 		runFilter();
 	});
 
-	$("#contribute-bar-button").click(function(e) {
-		e.preventDefault();
-		$("#contribute-bar-container").toggleClass('closed');
-	});
 });

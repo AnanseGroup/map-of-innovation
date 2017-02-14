@@ -31,16 +31,24 @@
     <div id="filter-bar">
 	        <div id="filters">
             <ul id="type-filter" class="filter-menu">
-                % for a in ("All", "Hub", "Event", "Gallery", "Retail", "Virtual", "Ecovillage", "Cluster"):
+                % for type in ("All", "Hub", "Event", "Workshop", "Ecovillage", "Virtual"):
                     <li>
-                        <a href="#" class="filter-item" data-filter-group="type" data-filter-item="${a.lower()}">
-                            <div class="filter-type-color ${a.lower()}-color"></div>${a}
+			<a href="#" class="filter-item" data-filter-group="type" data-filter-item="${type.lower()}">
+                            <div class="filter-type-color ${type.lower()}-color"></div>
+			    % if type == 'Workshop' :
+                                Workshops (Makerspaces, Hackerspaces, Fab Labs, etc.)
+                            % elif type == 'Hub' :
+                                Hubs (Tech/Impact Hubs, Incubators, etc)
+                            % elif type == 'Virtual' :
+                                Virtual Spaces 
+                            % elif type == 'All' :
+                                All
+                            % else :
+                                ${type +'s'} 
+                            % endif
                         </a>
                     </li>
                 % endfor
-    <!--            <li><a href="#" class="filter-item" data-filter-group="type" data-filter-item="factory">Factory</a></li>
-                    <li><a href="#" class="filter-item" data-filter-group="type" data-filter-item="library">Library</a></li>
-                <li><a href="#" class="filter-item" data-filter-group="type" data-filter-item="lab">Lab</a></li>  -->
             </ul>
             <ul id="theme-filter" class="filter-menu">
              % for theme in ('Agriculture', 'Appropriate Technology', 'Art and Culture','Biology', 'Design', 'Education','Youth', 'Science', 'Education', 'Food', 'Materials', 'Media', 'Politics'):
@@ -60,6 +68,7 @@
                     <img src="/assets/minus.png" class="filter-button-minus">
                 </a>
             % endfor
+		</div>
 		    <a id="sponsor-giz" href="https://www.giz.de/en/html/index.html" target="_blank">
             <img src="/assets/giz-logo.png">
         </a>    

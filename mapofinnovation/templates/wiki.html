@@ -26,7 +26,7 @@
 				</div>
 				<ul class="wiki-list">
 					% for country in c.list:
-						<li>${country}<!--span class="count pink">(${random.randrange(1,100)})</span--></li>
+						<a href="/uifunc/wikilist/country?name=${country}"<li>${country}<!--span class="count pink">(${random.randrange(1,100)})</span--></li></a> <br/>
 					% endfor
 				</ul>
 			</div>
@@ -51,8 +51,8 @@
 					<a href="#_" class="see-all">See All</a>
 				</div>
 				<ul class="wiki-list">
-					% for service in ("Coworking", "Hosting", "Events", "Selling and trading", "Incubating", "Startups", "Educating", "Vocational training", "Mentoring", "Donating", "Transferring", "Technology", "Co-living", "Repairing", "Manufacturing"):
-						<li>${service}<!--span class="count pink">(${random.randrange(1,350)})</span--></li>
+					% for service in ("Agriculture","Appropriate Technology","Art and Culture","Biology","Design","Education","Youth","Science","Education","Food","Materials","Media","Politics" ):
+					<a href="/uifunc/wikilist/theme?name=${service}"><li>${service}<!--span class="count pink">(${random.randrange(1,350)})</span--></li>
 					% endfor
 				</ul>
 			</div>

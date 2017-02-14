@@ -131,13 +131,22 @@ a img {
 
 #filters .filter-menu.active {
 	display: block;
-  border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 	padding-top:15px;
 	padding-bottom:15px;
 }
 
 #filters .filter-menu li {
 	height: 35px;
+}
+
+ #filters .filter-menu li {
+ 	height: 35px;
+ }
+
+#filters .filter-menu li {
+  min-height: 35px;
+  height: auto;
 }
 .filter-button-minus {
     display: none;
@@ -361,7 +370,7 @@ a img {
 }
 
 .hero-container {
-	height: 270px;
+	height: 320px;
 	width: 100%;
 	overflow: hidden;
 	background-image: url('../assets/banner_bg.png');
@@ -674,6 +683,7 @@ a img {
 	opacity: .8;
 	margin-bottom: 0px;
 	margin-top: 0px;
+	margin-right: 24px;
 	display: inline-block;
 }
 /* WIKI */
@@ -770,20 +780,11 @@ a img {
 	margin-left: 10px;
 }
 .leaflet-container a.leaflet-popup-close-button {
-	position: relative !important;
-	top: 40px !important;
-	/*left: calc(100% - 40px) !important;*/
-	padding: none !important;
-	border: none !important;
-	text-align: left !important;
-	width: inherit !important;
-	height: inherit !important;
-	font: inherit !important;
-	color: none !important;
-	margin: 0 !important;
-	text-decoration: none !important;
-	font-weight: normal !important;
-	background: inherit !important;
+	width: 24px;
+	height: 24px;
+	top: 16px;
+	right: 20px;
+	padding: 0;
 }
 
 .leaflet-popup-content-wrapper {
