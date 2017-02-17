@@ -1,13 +1,25 @@
 <div id="navigation-bar-container">
   <div class="navigation-bar">
-    <a class="navigation-bar-logo" href="/">
+    <a class="navigation-bar-logo" href="/map">
       <img src="/assets/logo_ananse.png" id="navigation-bar-home">
     </a>
 	% for menu_item in ("map", "about", "docs", "wiki"):
         % if '/'+menu_item == url.current() :
             <a href="${url('/'+menu_item)}" class="navigation-bar-button selected-navigation-bar-button">
-        % else :
-            <a href="${url('/'+menu_item)}" class="navigation-bar-button">
+         % elif url.current() == '/about/goals' :
+            % if menu_item == 'about' :
+                <a href="${url('/'+menu_item)}" class="navigation-bar-button selected-navigation-bar-button">
+            % else:
+                <a href="${url('/'+menu_item)}" class="navigation-bar-button">
+            % endif
+        % elif url.current() == '/docs/developer' :
+            % if menu_item == 'docs' :
+                <a href="${url('/'+menu_item)}" class="navigation-bar-button selected-navigation-bar-button">            
+            % else:
+                <a href="${url('/'+menu_item)}" class="navigation-bar-button">
+            % endif
+        % else:    
+	<a href="${url('/'+menu_item)}" class="navigation-bar-button">
         % endif
         % if menu_item == 'docs':
             DOCUMENTATION & LICENSING

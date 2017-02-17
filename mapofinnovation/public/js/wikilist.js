@@ -1,6 +1,7 @@
 var type_filter = document.getElementById('filter_type').value;
 var name_filter = document.getElementById('filter_name').value;
-$.get('/searchapi/findSpacesByType',{'type':type_filter,'name':name_filter}, function(spaces) {
+var name_f = name_filter.replace("+"," ");
+$.get('/searchapi/findSpacesByType',{'type':type_filter,'name':name_f}, function(spaces) {
 	if(spaces!="")
 	{
    for (i=0; i<spaces.length; ++i) {	
@@ -19,3 +20,5 @@ $.get('/searchapi/findSpacesByType',{'type':type_filter,'name':name_filter}, fun
 ));
 }
 });
+
+

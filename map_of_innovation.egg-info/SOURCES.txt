@@ -120,6 +120,7 @@ mapofinnovation/templates/developer-documentation.html
 mapofinnovation/templates/editspace.html
 mapofinnovation/templates/formedit.html
 mapofinnovation/templates/goals.html
+mapofinnovation/templates/join-us.html
 mapofinnovation/templates/makermap.html
 mapofinnovation/templates/thanks.html
 mapofinnovation/templates/user-documentation.html

@@ -62,14 +62,6 @@ a img {
 	box-shadow: none;
 }
 
-.leaflet-container a.leaflet-popup-close-button {
-    position: relative;
-    top: 40px;
-    left: calc(50% - 30px);
-    margin: 0;
-    border: none;
-}
-
 #sponsor-container {
 	position: relative;
 	/*right: 100px;*/
@@ -98,11 +90,22 @@ a img {
 	position: relative;
 	height: 60px;
 	width: 100%;
-/*	text-align: center;*/
+	/*text-align: center;*/
 }
-.filter-buttons{
+
+.filter-buttons {
 	text-align: center;
 	padding: 15px 0;
+}
+
+.filter-bar-button {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	font-size: 1.17em;
+	color: rgba(0, 0, 0, 0.8);
+	margin-right: 42px;
+	margin-left: 42px;
+	text-decoration: none;
 }
 
 .filter-bar-button {
@@ -131,13 +134,17 @@ a img {
 
 #filters .filter-menu.active {
 	display: block;
-	border-bottom: 1px solid #ccc;
-	padding-top:15px;
-	padding-bottom:15px;
+  border-bottom: 1px solid #ccc;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #filters .filter-menu li {
-	height: 35px;
+	line-height: 20px;
+  height: auto;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
 }
 
  #filters .filter-menu li {
@@ -145,19 +152,18 @@ a img {
  }
 
 #filters .filter-menu li {
-  min-height: 35px;
   height: auto;
 }
 .filter-button-minus {
-    display: none;
-    height: 12px;
-    margin-left: 6px;
+  display: none;
+  height: 12px;
+  margin-left: 6px;
 }
 
 .filter-button-plus {
-    display: inline-block;
-    height: 12px;
-    margin-left: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-left: 6px;
 }
 
 .active .filter-button-minus {
@@ -175,29 +181,35 @@ a img {
 
 .filter-type-color {
 	float: left;
-	width:8px;
-	height:8px;
-	padding:0;
-	margin-top:9px;
-	margin-right:5px;
-	border-radius:10px;
+	width: 8px;
+	height: 8px;
+	padding: 0;
+	margin-top: 7px;
+	margin-right: 8px;
+	border-radius: 10px;
 	background-color: #9ac86f;
 }
 
-#type-filter,#theme-filter {
+#type-filter, #theme-filter {
 	-moz-column-count: 4;
 	-webkit-column-count: 4;
 	column-count: 4;
+
+	-moz-column-fill: balance;
+	column-fill: balance;
+	-webkit-column-fill: balance;
+
 }
 
 .filter-item {
 	/*margin-right:19px;*/
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
-	font-size: 1.2em;
+	font-size: .9em;
 	color: black;
-	text-decoration:none;
+	text-decoration: none;
 }
+
 #info-bar {
 	position: relative;
 	text-align: center;
@@ -206,7 +218,7 @@ a img {
 
 #info-bar .header {
 	text-align: center;
-	max-width: 600px;
+	max-width: 800px;
 	margin: auto;
 }
 
@@ -226,6 +238,12 @@ a img {
 }
 #info-bar .sponsors li.large {
 	height: 75px;
+}
+
+#info-bar .sponsors li img {
+	display: block;
+	max-height: 100%;
+	width: auto;
 }
 
 #info-bar .sponsors li img {
@@ -439,7 +457,7 @@ a img {
 }
 
 #page-hero .header {
-	font-size: inherit;
+	font-size: 1.5em;
 	margin-top: 50px;
 	color: #00d4d2;
 }
@@ -488,7 +506,7 @@ a img {
 .page-intro-section {
 	width: 650px;
 	margin: 75px auto;
-	/*text-align: center;*/
+	text-align: center;
 	font-size: 14px;
 	line-height: 1.5;	
 }
@@ -504,10 +522,14 @@ a img {
 	color: rgba(0, 0, 0, 0.8);
 }
 
+.page-content a {
+	color: #00d4d2;
+}
 .page-content .section-header {
 	text-align: center;
 	margin-bottom: 40px;
 }
+
 .columns {
 	max-width: 900px;
 	width: auto;
@@ -521,7 +543,7 @@ a img {
 	max-width: 1140px;
 }
 
-.columns.two>div{
+.columns.two > div{
 	width: 50%;
 	float: left;
 }
@@ -531,21 +553,26 @@ a img {
 	float: left;
 }
 
-.columns> div * {
-/*	padding: 0 5px;*/
-}
-
 .columns > div img {
 	display: block;
 	width: 95%;
 	height: auto;
 	margin: 0 auto;
 }
+.columns .caption {
+  width: 95%;
+  margin: 8px auto;
+  font-size: .9em;
+}
 
 #goals-page .page-content li{
 	margin: 15px 0;
 	font-weight: lighter;
   font-size: 20px;
+}
+
+#goals-page .page-content .columns.two > div p {
+	padding: 0 15px;
 }
 
 #team-list {
@@ -845,6 +872,101 @@ a img {
 	display: none;
 }
 
+
+/* WIKI */
+
+#wiki-filter-bar {
+	height: 50px;
+	padding: 0px 42px;
+	line-height: 50px;
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+}
+#wiki-filter-bar * {
+	margin: 0;
+}
+
+#wiki-filter-bar .filter-title {
+	float: left;
+}
+
+#wiki-filter-bar .filter-menu {
+	float: left;
+	list-style: none;
+}
+
+#wiki-filter-bar .filter-menu .filter-type {
+	float: left;
+	margin-right: 30px;
+	text-transform: uppercase;
+	letter-spacing: .06em;
+	font-weight: 300;
+}
+#wiki-filter-bar .filter-menu .filter-type .filter-button {
+	color: #fff;
+}
+
+#wiki-filter-bar .filter-menu .filter-type .filter-plus {
+	/*font-size: 1.5em;*/
+	margin: 0 10px;
+	color: #00d4d2;
+}
+
+#wiki-filter-bar .clear-filters {
+	color: #ccc;
+	text-decoration: underline;
+	float: left;
+	font-weight: 300;
+	font-size: .9em;
+}
+
+.wiki-content {
+	margin-top: 30px;
+	font-weight: 300;
+}
+
+.wiki-content .columns .column-content {
+	padding: 0px 20px;
+	border-right: 1px solid rgba(0,0,0,0.3);
+}
+
+.wiki-content .columns div:last-of-type .column-content {
+	border: none;
+}
+.wiki-content .column-content .column-header {
+	height: 60px;
+	font-weight: 300;
+}
+.wiki-content .column-content .column-header h3 {
+	font-weight: 300;	
+	float: left;
+	margin-top: 0;
+}
+
+.wiki-content .column-header .see-all {
+	display: block;
+	float: left;
+  margin: 7px 20px;
+  font-weight: bold;
+  font-size: .6em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.wiki-list {
+	list-style: none;
+	padding: 0;
+}
+
+.wiki-list li {
+	margin: 20px 0;
+}
+
+.wiki-list li .count {
+	font-size: .8em;
+	margin-left: 10px;
+}
+
 /*PRIMARY SPACE TYPE COLORS*/
 .hub-color {
 	background-color: pink;
@@ -876,7 +998,6 @@ a img {
 /*THEME COLORS*/
 .biology-color {
 	background-color: pink;
-
 }
 .physics-color {
 	background-color: #9ac86f;
@@ -889,6 +1010,7 @@ a img {
 .materials-color {
 	background-color: orange;
 }
+
 /*OTHER SPACE TYPE COLORS*/
 .library-color {
 	background-color: #6af9fa;

@@ -27,7 +27,7 @@ def make_map(config):
     map.connect('/docs/developer', controller="uifunc", action="devDocs")
     map.connect('/contact', controller="uifunc", action="contactus")
     map.connect('/wiki', controller="uifunc", action="wiki")
-    map.connect('/join', controller="uifunc", action="contactus")
+    map.connect('/join', controller="uifunc", action="joinus")
     map.connect('/editspace', controller="uifunc", action="editspace")
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')

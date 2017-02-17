@@ -49,13 +49,15 @@ class UifuncController(BaseController):
 	if data['image_url'] is '':
 		s_image = ''
 	else:
-		s_image = urllib.unquote(data['image_url']).decode('utf8' )
+		s_image = urllib.unquote(data['image_url']).decode('utf8')
+
+	s_description = str(data['description']).decode('ISO-8859-1')
 	if data['last_updated'] is '':
 		s_last_updated = ''
 	else: 
 		s_last_updated = 'Last Updated : '+str(data['last_updated'])
 	s_tags=s_services+''+str(data['network_affiliation'])
-	extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']),'s_status':str(data['status']),'s_primarywebsite':s_primary_website,'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_tags':s_tags,'s_secondarytype':' ','s_description':str(data['description']),'s_address':s_address,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
+	extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']),'s_status':str(data['status']),'s_primarywebsite':s_primary_website,'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_tags':s_tags,'s_secondarytype':' ','s_description':s_description,'s_address':s_address,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
         return render('/wikipage.html',extra_vars)
       else :
         return 'There is no space with this id. Please recheck and submit'
@@ -75,6 +77,9 @@ class UifuncController(BaseController):
     def comingSoon(self):
 	return render('/coming-soon.html')
 
+    def joinus(self):
+	return render('/join-us.html')	
+
     def wiki(self):
 	with open('mapofinnovation/public/countries.json') as json_file:    
 		data = json.load(json_file)
@@ -86,7 +91,7 @@ class UifuncController(BaseController):
 	
     def wikilist(self,id=None):
 	c.filtertype = id
-	c.filterparam = request.params.get("name")
+	c.filterparam = (request.params.get("name"))
 	return render('/wikilist.html')	
 
     def contactus(self):

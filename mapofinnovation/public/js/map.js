@@ -39,13 +39,13 @@ var myIcon = L.icon({
 });
 
 var allMarkers = [];
-
 var noLocation = [];
 var placeInfoRequired = ['name', 'city', 'country', 'primary_type', 'theme'];
 
 $.get('baseapi/getAllSpaces', function(spaces) {
 	buildMarkers(spaces);
 });
+
 function buildMarkers(allSpaces) {
 	$(".loader-text").text("Building Map . . .");
 	for (i=0; i<allSpaces.length; ++i) {	
@@ -53,7 +53,6 @@ function buildMarkers(allSpaces) {
 		if (space.latitude && space.longitude) {
 			try {
 				var marker = L.marker([space.latitude, space.longitude], {icon: myIcon});
-
 				var placeData = {}
 				placeInfoRequired.forEach(function(key) {
 					if (typeof space[key] !== 'undefined') {
@@ -64,7 +63,7 @@ function buildMarkers(allSpaces) {
 						} else {
 							placeData[key] = space[key];
 						}
-					}
+					}	
 				});
 				marker.placeData = placeData;
 				var popup = createPopup(space);
@@ -72,15 +71,59 @@ function buildMarkers(allSpaces) {
 				markerClusters.addLayer(marker);
 				allMarkers.push(marker);
 			} catch (e) {
-				//console.log("TypeError: " + space.name);
-				//console.log(e.message);				
-}
-	} else {
-			noLocation.push(space);	
+				// console.log("TypeError: " + space.name);
+				// console.log(e.message);
+			}
+		} else {
+			noLocation.push(space);
+		}
 	}
-	 map.addLayer(markerClusters, {"chunkedLoading": true});
+	map.addLayer(markerClusters, {"chunkedLoading": true});
 	$("#loading").fadeOut();
+}
+
+function createPopup(space) {
+	
+	var popupText = "<div class='popup-header'>";
+	popupText += "<h3>"+space.name+"</h3>";
+	popupText += "</div>";
+	popupText += "<p><img src='../assets/pin2.png' height='14' class='popup-location-text'><span style='margin-bottom:3px;position:fixed;'>";
+
+	if (space.city != "") {
+		popupText += space.city+", "+space.country;
+	} else {
+		popupText += space.country;
 	}
+	popupText += "</span></p>"+"<a class='popup-website-link' target='_blank' href='http://"+space.primary_website+"'>"+space.primary_website+"</a><div class='popup-type-container'>"; 
+
+	var types = [];
+	if (space.primary_type.trim() != "" && types.indexOf(space.primary_type) === -1) {
+		types.push(space.primary_type);
+	} else {
+		console.log("No primary type: " + space.name);
+	}
+	if (space.multitypes != "") {
+		var multis = space.types_multiple.split(", ");
+		for (j=0; j<multis.length; j++) {
+			types.push(multis[j]);
+		}
+	}
+	for (k=0; k<types.length; k++) {
+		var color = "";
+		var type = types[k];
+		type = allTypes[type.toLowerCase().trim()]
+		if (type) {
+				popupText += "<div class='popup-type-color " + type.toLowerCase().replace(" ", "-")+"-color" + "'></div><span class='popup-type-text'>"
+							+type+"</span>";
+		} else {
+			console.log("Unknown type: "+types[k]);
+		}
+	}
+	popupText += "</div>";
+	popupText += "<p>"+space.description+"</p>";			
+	popupText += "<a href='"+space.wiki+"'><img src='../assets/space_page.png' class='space-page-button'></a>";
+
+	return popupText;
 }
 function createPopup(space) {
 	
@@ -158,7 +201,6 @@ $(document).ready(function() {
 	$("#filter-bar .filter-bar-button").click(function(e) {		
 		e.preventDefault();	
 		$("#filter-bar a.active").not(this).removeClass('active');
-
 		$(this).toggleClass('active');
 		var filterType = $(this).data('filter');
 		$("#filters .active").not($("#"+filterType+"-filter")).removeClass('active');
@@ -170,9 +212,7 @@ $(document).ready(function() {
 		appliedFilters = [];
 		var filterType = $(this).data('filterGroup');
 		var filter = $(this).data('filterItem');
-		console.log(filterType+":"+filter);
 		appliedFilters.push([filterType, filter]);
 		runFilter();
 	});
-
 });

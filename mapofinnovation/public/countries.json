@@ -1,14 +1,6 @@
 {
 	"country": [{
-		"countryName": "Andorra"
-	}, {
-		"countryName": "United Arab Emirates"
-	}, {
 		"countryName": "Afghanistan"
-	}, {
-		"countryName": "Antigua and Barbuda"
-	}, {
-		"countryName": "Anguilla"
 	}, {
 		"countryName": "Albania"
 	}, {
@@ -20,15 +12,11 @@
 	}, {
 		"countryName": "Argentina"
 	}, {
-		"countryName": "American Samoa"
-	}, {
 		"countryName": "Austria"
 	}, {
 		"countryName": "Australia"
 	}, {
 		"countryName": "Aruba"
-	}, {
-		"countryName": "Åland"
 	}, {
 		"countryName": "Azerbaijan"
 	}, {
@@ -49,8 +37,6 @@
 		"countryName": "Burundi"
 	}, {
 		"countryName": "Benin"
-	}, {
-		"countryName": "Saint Barthélemy"
 	}, {
 		"countryName": "Bermuda"
 	}, {
@@ -374,7 +360,7 @@
 	}, {
 		"countryName": "Qatar"
 	}, {
-		"countryName": "Réunion"
+		"countryName": "Reunion"
 	}, {
 		"countryName": "Romania"
 	}, {
@@ -415,8 +401,6 @@
 		"countryName": "Suriname"
 	}, {
 		"countryName": "South Sudan"
-	}, {
-		"countryName": "São Tomé and Príncipe"
 	}, {
 		"countryName": "El Salvador"
 	}, {
@@ -479,6 +463,8 @@
 		"countryName": "British Virgin Islands"
 	}, {
 		"countryName": "U.S. Virgin Islands"
+	}, {
+		"countryName": "United Arab Emirates"	
 	}, {
 		"countryName": "Vietnam"
 	}, {
