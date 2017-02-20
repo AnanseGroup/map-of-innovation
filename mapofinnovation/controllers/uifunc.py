@@ -38,11 +38,26 @@ class UifuncController(BaseController):
 	else:
 		s_address = str(data['street_address']).decode("ISO-8859-1")
 	s_primary_website = urllib.unquote(data['primary_website']).decode('utf8' )
-	s_twitter = urllib.unquote(data['twitter']).decode('utf8' )
-	s_facebook = urllib.unquote(data['facebook']).decode('utf8' )
-	s_jabber = urllib.unquote(data['jabber']).decode('utf8' )
-	s_fablabs_url = urllib.unquote(data['fablabs_url']).decode('utf8' )
-	s_googleplus = urllib.unquote(data['googleplus']).decode('utf8' )
+	if data['twitter'] is '':
+		s_twitter = '#'
+	else:
+		s_twitter = urllib.unquote(data['twitter']).decode('utf8' )
+	if data['facebook'] is '':
+                s_facebook = '#'
+        else:
+		s_facebook = urllib.unquote(data['facebook']).decode('utf8' )
+	if data['jabber'] is '':
+                s_jabber = '#'
+        else:
+		s_jabber = urllib.unquote(data['jabber']).decode('utf8' )
+	if data['fablabs_url'] is '':
+                s_fablabs_url = '#'
+        else:
+		s_fablabs_url = urllib.unquote(data['fablabs_url']).decode('utf8' )
+	if data['googleplus'] is '':
+                s_googleplus = '#'
+        else:
+		s_googleplus = urllib.unquote(data['googleplus']).decode('utf8' )
 	s_services = ''.join(data['services']) 
 	s_tools = ''.join(data['tools '])
 	s_function = ''.join(data['function'])
@@ -57,7 +72,8 @@ class UifuncController(BaseController):
 	else: 
 		s_last_updated = 'Last Updated : '+str(data['last_updated'])
 	s_tags=s_services+''+str(data['network_affiliation'])
-	extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']),'s_status':str(data['status']),'s_primarywebsite':s_primary_website,'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_tags':s_tags,'s_secondarytype':' ','s_description':s_description,'s_address':s_address,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
+	s_status = "Status:"+str(data['status'])
+	extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']).decode('ISO-8859-1'),'s_status':s_status,'s_primarywebsite':s_primary_website,'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_tags':s_tags,'s_secondarytype':' ','s_description':s_description,'s_address':s_address,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
         return render('/wikipage.html',extra_vars)
       else :
         return 'There is no space with this id. Please recheck and submit'

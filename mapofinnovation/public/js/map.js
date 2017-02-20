@@ -42,7 +42,7 @@ var allMarkers = [];
 var noLocation = [];
 var placeInfoRequired = ['name', 'city', 'country', 'primary_type', 'theme'];
 
-$.get('baseapi/getAllSpaces', function(spaces) {
+$.get('baseapi/getAllSpaces',{cache: true}, function(spaces) {
 	buildMarkers(spaces);
 });
 

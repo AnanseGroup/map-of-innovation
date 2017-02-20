@@ -8,21 +8,13 @@
 	}, {
 		"countryName": "Angola"
 	}, {
-		"countryName": "Antarctica"
-	}, {
 		"countryName": "Argentina"
 	}, {
 		"countryName": "Austria"
 	}, {
 		"countryName": "Australia"
 	}, {
-		"countryName": "Aruba"
-	}, {
-		"countryName": "Azerbaijan"
-	}, {
 		"countryName": "Bosnia and Herzegovina"
-	}, {
-		"countryName": "Barbados"
 	}, {
 		"countryName": "Bangladesh"
 	}, {
@@ -38,43 +30,19 @@
 	}, {
 		"countryName": "Benin"
 	}, {
-		"countryName": "Bermuda"
-	}, {
-		"countryName": "Brunei"
-	}, {
 		"countryName": "Bolivia"
 	}, {
-		"countryName": "Bonaire"
-	}, {
 		"countryName": "Brazil"
-	}, {
-		"countryName": "Bahamas"
-	}, {
-		"countryName": "Bhutan"
-	}, {
-		"countryName": "Bouvet Island"
 	}, {
 		"countryName": "Botswana"
 	}, {
 		"countryName": "Belarus"
 	}, {
-		"countryName": "Belize"
-	}, {
 		"countryName": "Canada"
-	}, {
-		"countryName": "Cocos [Keeling] Islands"
-	}, {
-		"countryName": "Democratic Republic of the Congo"
-	}, {
-		"countryName": "Central African Republic"
 	}, {
 		"countryName": "Republic of the Congo"
 	}, {
 		"countryName": "Switzerland"
-	}, {
-		"countryName": "Ivory Coast"
-	}, {
-		"countryName": "Cook Islands"
 	}, {
 		"countryName": "Chile"
 	}, {
@@ -86,29 +54,13 @@
 	}, {
 		"countryName": "Costa Rica"
 	}, {
-		"countryName": "Cuba"
-	}, {
-		"countryName": "Cape Verde"
-	}, {
-		"countryName": "Curacao"
-	}, {
-		"countryName": "Christmas Island"
-	}, {
 		"countryName": "Cyprus"
-	}, {
-		"countryName": "Czechia"
 	}, {
 		"countryName": "Germany"
 	}, {
-		"countryName": "Djibouti"
-	}, {
 		"countryName": "Denmark"
 	}, {
-		"countryName": "Dominica"
-	}, {
 		"countryName": "Dominican Republic"
-	}, {
-		"countryName": "Algeria"
 	}, {
 		"countryName": "Ecuador"
 	}, {
@@ -116,23 +68,11 @@
 	}, {
 		"countryName": "Egypt"
 	}, {
-		"countryName": "Western Sahara"
-	}, {
-		"countryName": "Eritrea"
-	}, {
 		"countryName": "Spain"
 	}, {
 		"countryName": "Ethiopia"
 	}, {
 		"countryName": "Finland"
-	}, {
-		"countryName": "Fiji"
-	}, {
-		"countryName": "Falkland Islands"
-	}, {
-		"countryName": "Micronesia"
-	}, {
-		"countryName": "Faroe Islands"
 	}, {
 		"countryName": "France"
 	}, {
@@ -140,19 +80,9 @@
 	}, {
 		"countryName": "United Kingdom"
 	}, {
-		"countryName": "Grenada"
-	}, {
 		"countryName": "Georgia"
 	}, {
-		"countryName": "French Guiana"
-	}, {
-		"countryName": "Guernsey"
-	}, {
 		"countryName": "Ghana"
-	}, {
-		"countryName": "Gibraltar"
-	}, {
-		"countryName": "Greenland"
 	}, {
 		"countryName": "Gambia"
 	}, {
@@ -160,25 +90,11 @@
 	}, {
 		"countryName": "Guadeloupe"
 	}, {
-		"countryName": "Equatorial Guinea"
-	}, {
 		"countryName": "Greece"
-	}, {
-		"countryName": "South Georgia and the South Sandwich Islands"
 	}, {
 		"countryName": "Guatemala"
 	}, {
-		"countryName": "Guam"
-	}, {
-		"countryName": "Guinea-Bissau"
-	}, {
-		"countryName": "Guyana"
-	}, {
 		"countryName": "Hong Kong"
-	}, {
-		"countryName": "Heard Island and McDonald Islands"
-	}, {
-		"countryName": "Honduras"
 	}, {
 		"countryName": "Croatia"
 	}, {
@@ -192,8 +108,6 @@
 	}, {
 		"countryName": "Israel"
 	}, {
-		"countryName": "Isle of Man"
-	}, {
 		"countryName": "India"
 	}, {
 		"countryName": "British Indian Ocean Territory"
@@ -206,25 +120,13 @@
 	}, {
 		"countryName": "Italy"
 	}, {
-		"countryName": "Jersey"
-	}, {
-		"countryName": "Jamaica"
-	}, {
 		"countryName": "Jordan"
 	}, {
 		"countryName": "Japan"
 	}, {
 		"countryName": "Kenya"
 	}, {
-		"countryName": "Kyrgyzstan"
-	}, {
 		"countryName": "Cambodia"
-	}, {
-		"countryName": "Kiribati"
-	}, {
-		"countryName": "Comoros"
-	}, {
-		"countryName": "Saint Kitts and Nevis"
 	}, {
 		"countryName": "North Korea"
 	}, {
@@ -232,23 +134,15 @@
 	}, {
 		"countryName": "Kuwait"
 	}, {
-		"countryName": "Cayman Islands"
-	}, {
 		"countryName": "Kazakhstan"
 	}, {
 		"countryName": "Laos"
 	}, {
 		"countryName": "Lebanon"
 	}, {
-		"countryName": "Saint Lucia"
-	}, {
-		"countryName": "Liechtenstein"
-	}, {
 		"countryName": "Sri Lanka"
 	}, {
 		"countryName": "Liberia"
-	}, {
-		"countryName": "Lesotho"
 	}, {
 		"countryName": "Lithuania"
 	}, {
@@ -260,36 +154,16 @@
 	}, {
 		"countryName": "Morocco"
 	}, {
-		"countryName": "Monaco"
-	}, {
-		"countryName": "Moldova"
-	}, {
-		"countryName": "Montenegro"
-	}, {
-		"countryName": "Saint Martin"
-	}, {
 		"countryName": "Madagascar"
-	}, {
-		"countryName": "Marshall Islands"
 	}, {
 		"countryName": "Macedonia"
 	}, {
 		"countryName": "Mali"
 	}, {
-		"countryName": "Myanmar [Burma]"
-	}, {
-		"countryName": "Mongolia"
-	}, {
-		"countryName": "Macao"
-	}, {
-		"countryName": "Northern Mariana Islands"
-	}, {
-		"countryName": "Martinique"
-	}, {
-		"countryName": "Mauritania"
-	}, {
 		"countryName": "Montserrat"
 	}, {
+		"countryName":"Mauritania"
+	},{
 		"countryName": "Malta"
 	}, {
 		"countryName": "Mauritius"
@@ -302,19 +176,11 @@
 	}, {
 		"countryName": "Malaysia"
 	}, {
-		"countryName": "Mozambique"
-	}, {
 		"countryName": "Namibia"
-	}, {
-		"countryName": "New Caledonia"
 	}, {
 		"countryName": "Niger"
 	}, {
-		"countryName": "Norfolk Island"
-	}, {
 		"countryName": "Nigeria"
-	}, {
-		"countryName": "Nicaragua"
 	}, {
 		"countryName": "Netherlands"
 	}, {
@@ -322,31 +188,19 @@
 	}, {
 		"countryName": "Nepal"
 	}, {
-		"countryName": "Nauru"
-	}, {
 		"countryName": "Niue"
 	}, {
 		"countryName": "New Zealand"
 	}, {
-		"countryName": "Oman"
-	}, {
 		"countryName": "Panama"
 	}, {
 		"countryName": "Peru"
-	}, {
-		"countryName": "French Polynesia"
-	}, {
-		"countryName": "Papua New Guinea"
 	}, {
 		"countryName": "Philippines"
 	}, {
 		"countryName": "Pakistan"
 	}, {
 		"countryName": "Poland"
-	}, {
-		"countryName": "Saint Pierre and Miquelon"
-	}, {
-		"countryName": "Pitcairn Islands"
 	}, {
 		"countryName": "Puerto Rico"
 	}, {
@@ -372,27 +226,17 @@
 	}, {
 		"countryName": "Saudi Arabia"
 	}, {
-		"countryName": "Solomon Islands"
-	}, {
-		"countryName": "Seychelles"
-	}, {
 		"countryName": "Sudan"
 	}, {
 		"countryName": "Sweden"
 	}, {
 		"countryName": "Singapore"
 	}, {
-		"countryName": "Saint Helena"
-	}, {
 		"countryName": "Slovenia"
-	}, {
-		"countryName": "Svalbard and Jan Mayen"
 	}, {
 		"countryName": "Slovakia"
 	}, {
 		"countryName": "Sierra Leone"
-	}, {
-		"countryName": "San Marino"
 	}, {
 		"countryName": "Senegal"
 	}, {
@@ -404,13 +248,7 @@
 	}, {
 		"countryName": "El Salvador"
 	}, {
-		"countryName": "Sint Maarten"
-	}, {
 		"countryName": "Syria"
-	}, {
-		"countryName": "Swaziland"
-	}, {
-		"countryName": "Turks and Caicos Islands"
 	}, {
 		"countryName": "Chad"
 	}, {

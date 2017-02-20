@@ -291,7 +291,7 @@ a img {
 }
 
 #navigation-bar-container {
-	height: 100px;
+	height: 95px;
 	width: 100%;
 	display: inline-flex;
 	box-shadow: -2px 2px 2.8px rgba(0,0,0,.1);
@@ -307,7 +307,7 @@ a img {
 	float: left;
 	height: 74px;
 	margin-left: 42px;
-	margin-top: 13px;
+	margin-top: 10px;
 	margin-right: 78px;
 }
 
@@ -388,7 +388,7 @@ a img {
 }
 
 .hero-container {
-	height: 320px;
+	height: auto;
 	width: 100%;
 	overflow: hidden;
 	background-image: url('../assets/banner_bg.png');
@@ -400,7 +400,7 @@ a img {
 }
 
 #contribute-bar-container.closed {
-	height: 60px;
+	height: 50px;
 }
 
 #contribute-bar-button {
@@ -408,7 +408,7 @@ a img {
 	height: 44px;
 	line-height: 40px;
 	margin-left: 42px;
-	margin-top: 8px;
+	margin-top: 3px;
 	padding-left: 40px;
 	color: rgba(0,0,0,.8);
 	background-image: url('../assets/contribute-plus.png');
@@ -418,6 +418,9 @@ a img {
 	text-decoration: none;
 }
 
+#contribute-content {
+	margin-bottom: 15px;
+}
 .quote {
 	margin: 50px 0;
 	color: rgba(0, 0, 0, 0.8);
@@ -457,8 +460,8 @@ a img {
 }
 
 #page-hero .header {
-	font-size: 1.5em;
-	margin-top: 50px;
+	font-size: 1.3em;
+	margin: 30px 0;
 	color: #00d4d2;
 }
 
@@ -611,7 +614,6 @@ a img {
 }
 
 #map-page-title-container {
-	height: 60px;
 	width: 100%;
 }
 
@@ -621,15 +623,16 @@ a img {
 	font-size: 2em;
 	color: black;
 	opacity: .8;
+	margin: 8px 0;
 	text-align: center;
 }
 
 #map-container {
 	position: relative;
 	height: 90%;
-	height: -moz-calc(100% - 360px);
-	height: -webkit-calc(100% - 360px);
-	height: calc(100% - 360px);	
+	height: -moz-calc(100% - 305px);
+	height: -webkit-calc(100% - 305px);
+	height: calc(100% - 305px);	
 }
 
 #map {
@@ -829,11 +832,12 @@ a img {
 }
 
 .popup-type-container {
-	display:flex;
-    margin-top: 5px;
-}
+  overflow: hidden;
+  margin-top: 5px;
+ }
 
 .popup-type-color {
+	float:left;
 	width:5px;
 	height:5px;
 	padding:0;
@@ -843,6 +847,7 @@ a img {
 }
 
 .popup-type-text {
+	float:left;
 	margin-right:19px;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
