@@ -1,6 +1,6 @@
 
 var currentLocation = window.location.search.toString().split("=")[1]
-var services = ["Coworking","Making","Hosting Events","Selling","Trading","Incubating Startups","Educating","Vocational training","Investing","Mentoring","Donating","Transferring technology","Coliving","Repairing","Manufacturing","Prototyping","Researching"]
+var services = ["Coworking","Making","Hosting Events","Selling","Trading","Incubating Startup","Educating","Vocational training","Investing","Mentoring","Donating","Transferring technology","Coliving","Repairing","Manufacturing","Prototyping","Researching"]
 var ownership = ["Civil Society","Private Sector","Hybrid Led","Government","Academic","University"]
 $.get('baseapi/getSpace',{'id':currentLocation}, function(space) {
 	document.getElementById('text-name').value = space["name"];
