@@ -16,10 +16,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 a {
-	text-decoration: none;
+	color: #00d4d2;
 }
 
 a img {
+	text-decoration:none;
 	border: none;
 }
 
@@ -29,6 +30,10 @@ a img {
 
 .baskerville {
 	font-family: 'Libre Baskerville', 'Baskerville', 'Times New Roman', serif;
+}
+
+.no-underline {
+	text-decoration: none;
 }
 
 .button {
@@ -45,6 +50,10 @@ a img {
 	opacity: .8;
 	margin-top: 5px !important;
 	margin-bottom: 5px !important;
+}
+
+#contribute-bar-container.closed #contribute-bar-button {
+	background-image: url('../assets/contribute-plus.png') !important;	
 }
 
 .leaflet-top.leaflet-left {
@@ -411,7 +420,7 @@ a img {
 	margin-top: 3px;
 	padding-left: 40px;
 	color: rgba(0,0,0,.8);
-	background-image: url('../assets/contribute-plus.png');
+	background-image: url('../assets/contribute-minus.png');
 	background-size: 30px;
 	background-repeat: no-repeat;
 	background-position: 0 7px;

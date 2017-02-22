@@ -1,6 +1,7 @@
 
 var currentLocation = window.location.search.toString().split("=")[1]
-var services = ["Coworking","Making","Hosting Events","Incubating Startups","Educating","Vocational training","Investing","Mentoring","Donating","Transferring technology","Coliving","Repairing","Manufacturing","Prototyping","Researching"]
+var services = ["Coworking","Making","Hosting Events","Selling","Trading","Incubating Startups","Educating","Vocational training","Investing","Mentoring","Donating","Transferring technology","Coliving","Repairing","Manufacturing","Prototyping","Researching"]
+var ownership = ["Civil Society","Private Sector","Hybrid Led","Government","Academic","University"]
 $.get('baseapi/getSpace',{'id':currentLocation}, function(space) {
 	document.getElementById('text-name').value = space["name"];
 	$("#primary-type").val(space["primary_type"]).trigger('chosen:updated');
@@ -10,8 +11,7 @@ $.get('baseapi/getSpace',{'id':currentLocation}, function(space) {
 	document.getElementById('text-email').value = space["email"];
 	document.getElementById('textarea-description').value = space["description"];
 	document.getElementById('number-phone').value = space["phonenumber"];
-	document.getElementById('textarea-tools').value = (space["tools "]).toString();
-	document.getElementById('textarea-tags').value = (space["network_affiliation"]).toString()+space["services"];	
+	document.getElementById('textarea-tools').value = (space["tools"]).toString();
 	$("#members").val(space["members"]).trigger('chosen:updated');
 	$("#affiliation").val(space["network_affiliation"]).trigger('chosen:updated');
 	$("#select-status").val(space["status"]).trigger('chosen:updated');
@@ -23,4 +23,13 @@ $.get('baseapi/getSpace',{'id':currentLocation}, function(space) {
 	document.getElementById("checkbox-services-"+index).checked = true;   	
    	}
    	}
+	
+	if(space["ownership"]!="")
+        {
+        ownership_list = space["ownership"].split(",") ;
+   for (var i = 0; i < ownership_list.length; i++) {
+        index =  ownership.indexOf(ownership_list[i]);
+        document.getElementById("checkbox-ownership-"+index).checked = true;
+        }
+        }
 });

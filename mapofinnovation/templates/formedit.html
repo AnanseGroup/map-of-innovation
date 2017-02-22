@@ -4,6 +4,7 @@
 <%include file="/snippets/header.html" />
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type='text/javascript' src="/js/editform.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
 <link rel="stylesheet" type="text/css" href="/css/form.css"/>
 <form id="rendered-form" name="editspace" method="get" action="/baseapi/changeSpace/${request.params.get('id')}">
 <fieldset>
@@ -38,54 +39,55 @@
 </fieldset>
 <fieldset> 
 <br/>
-<div class="fb-checkbox form-group field-checkbox-services"><label for="checkbox-services" class="fb-checkbox-group-label">Services  </label><br/><div class="checkbox-group"><input value="coworking" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-0" checked=""> <label for="checkbox-services-0">Coworking</label><br><input value="Maker" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-1"> <label for="checkbox-services-1">Making</label><br><input value="Hosting events" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-2"> <label for="checkbox-services-2">Hosting Events</label><br><input value="Selling and trading" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-3" checked=""> <label for="checkbox-services-3">Selling and trading</label><br>
-<input value="Incubating startups" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-4" checked=""> <label for="checkbox-services-4">Incubating Startups</label><br>
-<input value="Educating" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-5" checked=""> <label for="checkbox-services-5">Educating</label><br>
-<input value="Vocational training" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-6" checked=""> <label for="checkbox-services-6">Vocational training</label><br>
-<input value="Investing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-7" checked=""> <label for="checkbox-services-7">Investing</label><br>
-<input value="Mentoring" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-8" checked=""> <label for="checkbox-services-8">Mentoring</label><br>
-<input value="Donating" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-9" checked=""> <label for="checkbox-services-9">Donating</label><br>
-<input value="Transferring technology" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-10" checked=""> <label for="checkbox-services-10">Transferring technology</label><br>
-<input value="Coliving" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-11" checked=""> <label for="checkbox-services-11">Coliving</label><br>
-<input value="Repairing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-12" checked=""> <label for="checkbox-services-12">Repairing</label><br>
-<input value="Manufacturing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-13" checked=""> <label for="checkbox-services-13">Manufacturing</label><br>
-<input value="Prototyping" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-14" checked=""> <label for="checkbox-services-14">Prototyping</label><br>
-<input value="Researching" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-15" checked=""> <label for="checkbox-services-15">Researching</label><br>
+<div class="fb-checkbox form-group field-checkbox-services"><label for="checkbox-services" class="fb-checkbox-group-label">Services  </label><br/><div class="checkbox-group"><input value="Coworking" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-0" > <label for="checkbox-services-0">Coworking</label><br><input value="Maker" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-1"> <label for="checkbox-services-1">Making</label><br><input value="Hosting events" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-2"> <label for="checkbox-services-2">Hosting Events</label><br><input value="Selling" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-3" ><label for="checkbox-services-3">Selling</label><br><input value="Trading" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-4" ><label for="checkbox-services-4">Trading</label><br>
+<input value="Incubating Startup" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-5" > <label for="checkbox-services-5">Incubating Startups</label><br>
+<input value="Educating" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-6" > <label for="checkbox-services-6">Educating</label><br>
+<input value="Vocational training" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-7" > <label for="checkbox-services-7">Vocational training</label><br>
+<input value="Investing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-8" > <label for="checkbox-services-8">Investing</label><br>
+<input value="Mentoring" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-9" > <label for="checkbox-services-9">Mentoring</label><br>
+<input value="Donating" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-10" > <label for="checkbox-services-10">Donating</label><br>
+<input value="Transferring technology" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-11" > <label for="checkbox-services-11">Transferring technology</label><br>
+<input value="Coliving" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-12" > <label for="checkbox-services-12">Coliving</label><br>
+<input value="Repairing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-13" > <label for="checkbox-services-13">Repairing</label><br>
+<input value="Manufacturing" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-14" > <label for="checkbox-services-14">Manufacturing</label><br>
+<input value="Prototyping" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-15" > <label for="checkbox-services-15">Prototyping</label><br>
+<input value="Researching" type="checkbox" class="checkbox-group" name="services" id="checkbox-services-16" > <label for="checkbox-services-16">Researching</label><br>
 </div></div>
 </fieldset>
-<div class="fb-select form-group field-select-status"><label for="select-status" class="fb-select-label">Status </label><select type="select"  class="form-control" name="status" id="select-status" ><option value="open" selected="true">Open</option><option value="closed">Closed</option><option value="planned">Planned </option></select></div>
+<div class="fb-select form-group field-select-status"><label for="select-status" class="fb-select-label">Status </label><select type="select"  class="form-control" name="status" id="select-status" ><option value="unknown" selected="true">Unknown</option> <option value="Active" selected="true">Active</option><option value="inactive">Inactive</option><option value="planned">Planned </option></select></div>
 <fieldset>
-<div class="fb-undefined form-group field-textarea-tools"><label for="textarea-tools" class="fb-textarea-label">Tools  </label><textarea type="textarea" class="form-control" name="tools" id="textarea-tools"></textarea></div>
-</fieldset>
-<fieldset>
-<div class="fb-undefined form-group field-textarea-tags"><label for="textarea-tags" class="fb-textarea-label">Tags </label><textarea type="textarea" class="form-control" name="tags" id="textarea-tags"></textarea></div>
+<div class="fb-undefined form-group field-textarea-tools"><label for="textarea-tools" class="fb-textarea-label">Capabilities  </label><textarea type="textarea" class="form-control" name="tools" id="textarea-tools"></textarea></div>
 </fieldset>
 <fieldset>
 <div class="fb-select form-group field-primary-type"><label for="members" class="fb-select-label">Members</label><select type="select" class="form-control" name="number_of_members" id="members" >
-<option value="1"> Unknown</option>
-<option value="2">1-50</option>
-<option value="3">51-100</option>
-<option value="4">100-300</option>
-<option value="5">300+</option>
+<option value="Unknown"> Unknown</option>
+<option value="1 to 50">1 to 50</option>
+<option value="51 to 100">51 to 100</option>
+<option value="101 to 500">101 to 500</option>
+<option value="500+">500+</option>
 </select></div>
 </fieldset>
 <fieldset>
-<div class="fb-select form-group field-primary-type"><label for="affiliation" class="fb-select-label">Affiliation </label><select type="select"  class="form-control" name="network_affiliation" id="affiliation" >
-<option value="1"> Hackerspaces.org</option>
-<option value="2">Fablabs</option>
-<option value="3">Impact Hub</option>
-<option value="4">Afri Lab</option>
-<option value="5">Global Eco Village Network</option>
-<option value="6"> Hackerbases</option>
-<option value="7">Maker Faire</option>
-<option value="8">Mens Shed</option>
-<option value="9">RepairCafe</option>
-<option value="10">Tech Shop</option>
-<option value="11"> Global Innovation Gathering</option>
-<option value="12">Other</option>
+<div class="fb-select form-group field-primary-type"><label for="affiliation" class="fb-select-label">Affiliations </label><select type="select"  class="form-control" name="network_affiliation" id="affiliation" >
+<option value="Hackerspaces"> Hackerspaces.org</option>
+<option value="Fab Labs">Fablabs</option>
+<option value="Impact Hub">Impact Hub</option>
+<option value="Afri Lab">Afri Lab</option>
+<option value="GlobalEcovillage">Global Eco Village Network</option>
+<option value="Hackerbases"> Hackerbases</option>
+<option value="Maker Faire">Maker Faire</option>
+<option value="RepairCafe">RepairCafe</option>
+<option value="Tech Shop">Tech Shop</option>
+<option value="Global Innovation Gathering"> Global Innovation Gathering</option>
+<option value="Other">Other</option>
 </select></div>
 </fieldset>
- <button type="cancel" id="space-cancel">Cancel</button>
+<fieldset>
+<div class="fb-checkbox form-group field-checkbox-services"><label for="checkbox-services" class="fb-checkbox-group-label">Ownership  </label><br/><div class="checkbox-group"><input value="Civil Society" type="checkbox" class="checkbox-group" name="ownership" id="checkbox-ownership-0" > <label for="checkbox-ownership-0">Civil Society</label><br><input value="Private Sector" type="checkbox" class="checkbox-group" name="ownership" id="checkbox-ownership-1"> <label for="checkbox-ownership-1">Private Sector</label><br><input value="Hybrid Led" type="checkbox" class="checkbox-group" name="ownership" id="checkbox-ownership-2"> <label for="checkbox-ownership-2">Hybrid Led</label><br><input value="Government" type="checkbox" class="checkbox-group" name="ownership" id="checkbox-ownership-3" ><label for="checkbox-ownership-3">Government</label><br><input value="Academic" type="checkbox" class="checkbox-group" name="ownership" id="checkbox-ownership-4" ><label for="checkbox-ownership-4">Academic</label><br><input value="University" type="checkbox" class="checkbox-group" name="ownership" id="checkbox-ownership-5" > <label for="checkbox-ownership-5">University</label><br>
+</div></div>
+<br/>
+</fieldset>
+ <button type="cancel" id="space-cancel" onclick="window.location='/uifunc/wikipage/${request.params.get('id')}';return false;">Cancel</button>
  <button type="submit" id="space-submit">Submit</button>
 </form>
 <%include file="/snippets/footer.html" />

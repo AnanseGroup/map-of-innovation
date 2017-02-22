@@ -1,3 +1,6 @@
+p{
+        font-size: 14px;
+}
 .rowAlign {
  width: 100%;
  text-align: center; // center the content of the container
@@ -15,10 +18,15 @@ font-weight: bold;
 vertical-align: top;
 }
 
+#w-space-description {
+padding : 25px;
+margin-left : 25px;
+margin-right : 25px;
+}
 #wTitle{
-font-size: 40pt ;
+font-size: 30pt ;
 margin-top: 20px;
-color:  #333333; 
+color:  #00d4d2; 
 text-align: center;
 }
 
@@ -26,6 +34,12 @@ text-align: center;
 font-size: 16pt ;
 color:  #333333; 
 margin-bottom: 42px;
+text-align: center;
+}
+
+#wType{
+font-size: 12pt ;
+color:  #333333;
 text-align: center;
 }
 
@@ -75,9 +89,10 @@ display: block;
 }
 
 .wBlockTh{
-padding-top: 20px;
+padding: 20px;
 width: 100%;
 display: inline-block;
+vertical-align: middle;
 }
 
 hr{
@@ -91,6 +106,7 @@ display: inline-block;
 #w-top-navigation-bar-edit-button{
 	height: 14pt;
 	margin-right: 40px;
+	padding:25px;
 }
 
 #w-top-navigation-bar-flag-incorrect-button{
@@ -103,6 +119,11 @@ float:left;
 width: 40%;
 display: block;
 }
+
+.w-block-center{
+display: block;
+}
+
 .w-block-right{
 width: 40%;
 float: right;
@@ -150,6 +171,11 @@ width: 100%;
 #w-address{
 	display: inline-block;
 }
+
+.w-social-link {
+text-decoration: none !important;
+}
+
 .w-social-button{
 width: 20px;
 height: 20px;

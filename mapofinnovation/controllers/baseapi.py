@@ -95,18 +95,11 @@ class BaseapiController(BaseController):
 	params=request.params
         temp_params = {}
         for k,v in params.items():
-        	if(temp_params.has_key(k)) :	
-			if type(temp_params[k]) is list :
-				temp_params[k].append(v)
-			else:
-				tmp = temp_params[k]
-				temp_params[k]= []
-				temp_params[k].append(tmp)
-				temp_params[k].append(v)
+        	if(temp_params.has_key(k)) :
+			temp_params[k]=temp_params[k]+","+v
 		else :
 			temp_params.update({k:v})
-	print temp_params
-	#r.hmset(id,temp_params)
+	r.hmset(id,temp_params)
 	return render('/thanks.html',{'s_id':id})
    		
     @jsonify

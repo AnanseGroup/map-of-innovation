@@ -42,6 +42,7 @@ mapofinnovation/public/index.html
 mapofinnovation/public/new_tools_and_social.csv
 mapofinnovation/public/pylons-logo.gif
 mapofinnovation/public/spaces_ready_for_merge.csv
+mapofinnovation/public/updated_spaces_ready_for_merge.csv
 mapofinnovation/public/assets/.DS_Store
 mapofinnovation/public/assets/Placeholder_logo.png
 mapofinnovation/public/assets/add_category.png
@@ -51,6 +52,7 @@ mapofinnovation/public/assets/bg_lines_left.png
 mapofinnovation/public/assets/bg_lines_right.png
 mapofinnovation/public/assets/bottom_graphic_detail.png
 mapofinnovation/public/assets/contact_us.png
+mapofinnovation/public/assets/contribute-minus.png
 mapofinnovation/public/assets/contribute-plus.png
 mapofinnovation/public/assets/contribute.png
 mapofinnovation/public/assets/edit_button.png

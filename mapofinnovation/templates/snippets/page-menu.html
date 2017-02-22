@@ -1,6 +1,19 @@
 <div class="page-menu source-sans">
 	<ul>
-	 <li><a href="/about" class="active">Team & Partners</a></li>
-		<li><a href="/about/goals">Goals</a></li>
+		% for menu_item in ("about", "about/goals"):
+        <li>
+        % if '/'+menu_item == url.current() :
+            <a href="${url('/'+menu_item)}" class="active no-underline">
+        % else :
+            <a href="${url('/'+menu_item)}" class="no-underline">
+        % endif
+        % if menu_item == 'about':
+            Team & Partners
+        % else :
+            Goals
+        % endif
+        </a>
+        </a>
+    % endfor	
 	</ul>
 </div>

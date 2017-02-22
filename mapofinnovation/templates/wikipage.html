@@ -27,8 +27,9 @@
 <div class="wBlockOne">
 <img src="/assets/Placeholder_logo.png" alt="#" style="height: 100px; display:block;margin-left: auto;margin-right: auto;">
 <p ></p>
-<p id="wTitle">${s_name}</p>
+<h2 id="wTitle">${s_name}</h2>
 <p id="wStatus">${s_status}</p>
+<p id="wType">${s_primarytype}</p>
 <p id="w-space-description">${s_description}</p>
 <hr />
 </div>
@@ -40,28 +41,39 @@
   <br/>
 	<div id="w-address">  
 	<p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${s_address}</p> 
+	 % if s_country != "":
+	<a href="/uifunc/wikilist/country?name=${s_country}">${s_country}</a>
+	% endif
   </div> 
   </div>
   <div class="rowTextBlock">
    <p id="wBlockSubTitle">Social Media</p>
    <div class="social-media-block">
-   <a href="${s_twitter | n}"  id="w-social-button">
-	   <img src="/assets/social_twitter.png" class="w-social-button" >
+	% if s_twitter != "":
+   <a href="${s_twitter | n}"  id="w-social-button" class="w-social-link">
+	<img src="/assets/social_twitter.png" class="w-social-button" >
    </a>
-   <a href="${s_googleplus | n}"  id="w-social-gplus">
+% endif
+   % if s_googleplus != "":
+   <a href="${s_googleplus | n}"  id="w-social-gplus"  class="w-social-link">
 	<img src="/assets/social_google+.png" class="w-social-button">
    </a>
-   <a href="${s_fablabs_url | n}" id="w-social-fablab">
-   <img src="/assets/social_fablab.png"  class="w-social-button">
+   	% endif
+   % if s_fablabs_url != "":
+   <a href="${s_fablabs_url | n}" id="w-social-fablab" class="w-social-link">
+	<img src="/assets/social_fablab.png"  class="w-social-button">
    	</a>
-   <a href="${s_facebook | n}"  id="w-social-facebook" target=>
+	% endif
+   % if s_facebook != "":
+   <a href="${s_facebook | n}"  id="w-social-facebook" class="w-social-link">
 	<img src="/assets/social_facebook.png"  class="w-social-button">
    </a>
+   %endif
    </div>
   </div>
   <div class="rowTextBlock">
-  <p id="wBlockSubTitle">Type</p>
-  <ul style="text-align: left;"><li>${s_primarytype}</li></ul>
+  <p id="wBlockSubTitle">Themes</p>
+  <p>${s_theme}</p>
   </div>
   <div class="rowTextBlock">
   <p id="wBlockSubTitle">Source</p>
@@ -78,8 +90,8 @@
                 <p>${s_networkaffliation}</p>
                 </div>
                 <div class="rowTextBlock">
-                <p id="wBlockSubTitle">Tags</p>
-                <p>${s_tags}</p>
+                <p id="wBlockSubTitle">Ownership</p>
+                <p>${s_ownership}</p>
                 </div>
                 <div class="rowTextBlock">
                 <p id="wBlockSubTitle">Services & Capabilities</p>
@@ -96,10 +108,13 @@
 </div>
 
 <div class="wBlockTh">
-<div  class="w-block-left">
-   <img src="${s_image}" alt="" style="" >   
-  </div>
+% if s_image != "":
+<div  class="w-block-center">
+   <img src="${s_image}" alt="" style="height: 250px; display:block;margin-left: auto;margin-right: auto;" >   
+    
 </div>
+</div>
+% endif
 <p>${s_last_updated}</p>
 </div>
 </body>

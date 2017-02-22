@@ -3,9 +3,9 @@
 		% for menu_item in ("docs", "docs/developer"):
         <li>
         % if '/'+menu_item == url.current() :
-            <a href="${url('/'+menu_item)}" class="active">
+            <a href="${url('/'+menu_item)}" class="active no-underline">
         % else :
-            <a href="${url('/'+menu_item)}">
+            <a href="${url('/'+menu_item)}" class="no-underline">
         % endif
         % if menu_item == 'docs/developer':
             Developer Documentation

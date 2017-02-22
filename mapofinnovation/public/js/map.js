@@ -91,49 +91,6 @@ function createPopup(space) {
 
 	if (space.city != "") {
 		popupText += space.city+", "+space.country;
-	} else {
-		popupText += space.country;
-	}
-	popupText += "</span></p>"+"<a class='popup-website-link' target='_blank' href='http://"+space.primary_website+"'>"+space.primary_website+"</a><div class='popup-type-container'>"; 
-
-	var types = [];
-	if (space.primary_type.trim() != "" && types.indexOf(space.primary_type) === -1) {
-		types.push(space.primary_type);
-	} else {
-		console.log("No primary type: " + space.name);
-	}
-	if (space.multitypes != "") {
-		var multis = space.types_multiple.split(", ");
-		for (j=0; j<multis.length; j++) {
-			types.push(multis[j]);
-		}
-	}
-	for (k=0; k<types.length; k++) {
-		var color = "";
-		var type = types[k];
-		type = allTypes[type.toLowerCase().trim()]
-		if (type) {
-				popupText += "<div class='popup-type-color " + type.toLowerCase().replace(" ", "-")+"-color" + "'></div><span class='popup-type-text'>"
-							+type+"</span>";
-		} else {
-			console.log("Unknown type: "+types[k]);
-		}
-	}
-	popupText += "</div>";
-	popupText += "<p>"+space.description+"</p>";			
-	popupText += "<a href='"+space.wiki+"'><img src='../assets/space_page.png' class='space-page-button'></a>";
-
-	return popupText;
-}
-function createPopup(space) {
-	
-	var popupText = "<div class='popup-header'>";
-	popupText += "<h3>"+space.name+"</h3>";
-	popupText += "</div>";
-	popupText += "<p><img src='../assets/pin2.png' height='14' class='popup-location-text'><span style='margin-bottom:3px;position:fixed;'>";
-
-	if (space.city != "") {
-		popupText += space.city+", "+space.country;
  	} else {
 		popupText += space.country;
  	}
@@ -148,7 +105,9 @@ function createPopup(space) {
 	if (space.multitypes != "") {
 		var multis = space.types_multiple.split(", ");
 		for (j=0; j<multis.length; j++) {
-			types.push(multis[j]);
+		if (multis[j].toLowerCase().trim() != space.primary_type.trim().toLowerCase()) {
+				types.push(multis[j]);
+			}
 		}
 	}
 	for (k=0; k<types.length; k++) {
