@@ -10,9 +10,10 @@ $.get('baseapi/getSpace',{'id':currentLocation}, function(space) {
 	document.getElementById('text-country').value = space["country"];
 	document.getElementById('text-email').value = space["email"];
 	document.getElementById('textarea-description').value = space["description"];
-	document.getElementById('number-phone').value = space["phonenumber"];
+	document.getElementById('number-phone').value = space["phone"];
 	document.getElementById('textarea-tools').value = (space["tools"]).toString();
-	$("#members").val(space["members"]).trigger('chosen:updated');
+	$("#members").val(space["number_of_members"]).trigger('chosen:updated');
+	 $("#theme").val(space["theme"]).trigger('chosen:updated');
 	$("#affiliation").val(space["network_affiliation"]).trigger('chosen:updated');
 	$("#select-status").val(space["status"]).trigger('chosen:updated');
 	if(space["services"]!="")
@@ -20,6 +21,7 @@ $.get('baseapi/getSpace',{'id':currentLocation}, function(space) {
 	service_list = space["services"].split(",") ;
    for (var i = 0; i < service_list.length; i++) {
 	index =  services.indexOf(service_list[i]);
+	if(index!=-1)
 	document.getElementById("checkbox-services-"+index).checked = true;   	
    	}
    	}
@@ -29,7 +31,8 @@ $.get('baseapi/getSpace',{'id':currentLocation}, function(space) {
         ownership_list = space["ownership"].split(",") ;
    for (var i = 0; i < ownership_list.length; i++) {
         index =  ownership.indexOf(ownership_list[i]);
-        document.getElementById("checkbox-ownership-"+index).checked = true;
+        if(index!=-1)
+	document.getElementById("checkbox-ownership-"+index).checked = true;
         }
         }
 });

@@ -13,13 +13,19 @@ p{
  vertical-align: top;
 }
 
+#textBlock{
+width: 250px;
+word-wrap: break-word;
+}
+
 #wBlockSubTitle{
 font-weight: bold;
 vertical-align: top;
 }
 
 #w-space-description {
-padding : 25px;
+padding-left : 25px;
+padding-right : 25px;
 margin-left : 25px;
 margin-right : 25px;
 }
@@ -30,10 +36,15 @@ color:  #00d4d2;
 text-align: center;
 }
 
+#wWebsite{
+text-align: center;
+display:block;
+}
+
 #wStatus{
 font-size: 16pt ;
 color:  #333333; 
-margin-bottom: 42px;
+margin-bottom: 30px;
 text-align: center;
 }
 

@@ -28,6 +28,9 @@
 <img src="/assets/Placeholder_logo.png" alt="#" style="height: 100px; display:block;margin-left: auto;margin-right: auto;">
 <p ></p>
 <h2 id="wTitle">${s_name}</h2>
+ % if s_primarywebsite != "":
+<a id="wWebsite" href="http://${s_primarywebsite | n}" target="_blank">${s_primarywebsite | n}</a>
+ % endif
 <p id="wStatus">${s_status}</p>
 <p id="wType">${s_primarytype}</p>
 <p id="w-space-description">${s_description}</p>
@@ -37,7 +40,10 @@
 <div class="rowAlign">
   <div class="rowTextBlock">
   <p id="wBlockSubTitle">Contact Info</p>
-  <a href="http://${s_primarywebsite | n}" target="_blank">${s_primarywebsite | n}</a>
+  <!--a href="http://${s_primarywebsite | n}" target="_blank">${s_primarywebsite | n}</a-->
+  % if s_email != "":
+  <a href= "mailto:${s_email | n}">${s_email | n}</a>  
+  % endif
   <br/>
 	<div id="w-address">  
 	<p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${s_address}</p> 
@@ -73,11 +79,11 @@
   </div>
   <div class="rowTextBlock">
   <p id="wBlockSubTitle">Themes</p>
-  <p>${s_theme}</p>
+  <p id="textBlock">${s_theme}</p>
   </div>
   <div class="rowTextBlock">
   <p id="wBlockSubTitle">Source</p>
-  <p>${s_source}</p>
+  <p "textBlock">${s_source}</p>
   </div>
 </div>
 <hr/>
@@ -95,8 +101,8 @@
                 </div>
                 <div class="rowTextBlock">
                 <p id="wBlockSubTitle">Services & Capabilities</p>
-                <p>${s_services}</p>
-                <p>${s_tools} </p>
+                <p id="textBlock">${s_services}</p>
+                <p id="textBlock">${s_tools} </p>
                 </div>
                 <div class="rowTextBlock">
                 <p id="wBlockSubTitle">Members</p>
