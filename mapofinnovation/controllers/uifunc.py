@@ -122,3 +122,7 @@ class UifuncController(BaseController):
 
     def editspace(self,id=None):
 	return render('/formedit.html')
+	
+    def gigmap(self):
+        # Return a rendered front page  template
+    	return render('/makermap-gig.html')

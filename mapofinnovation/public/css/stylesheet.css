@@ -648,6 +648,11 @@ a img {
 	height: 100%;
 }
 
+#map-gig {
+        height: 140%;
+	width : 90%;
+	margin: 0 auto;
+}
 #loading {
 	position: absolute;
 	top: 0;
