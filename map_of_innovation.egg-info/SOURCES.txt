@@ -109,6 +109,7 @@ mapofinnovation/public/js/Datafields merge doc.docx
 mapofinnovation/public/js/editform.js
 mapofinnovation/public/js/leaflet.js
 mapofinnovation/public/js/leaflet.markercluster.js
+mapofinnovation/public/js/map-gig.js
 mapofinnovation/public/js/map.js
 mapofinnovation/public/js/page.js
 mapofinnovation/public/js/wiki.js
@@ -123,6 +124,7 @@ mapofinnovation/templates/editspace.html
 mapofinnovation/templates/formedit.html
 mapofinnovation/templates/goals.html
 mapofinnovation/templates/join-us.html
+mapofinnovation/templates/makermap-gig.html
 mapofinnovation/templates/makermap.html
 mapofinnovation/templates/thanks.html
 mapofinnovation/templates/user-documentation.html
