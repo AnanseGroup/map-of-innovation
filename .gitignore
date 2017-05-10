@@ -1,3 +1,4 @@
 isenv/
 data/
 *.pyc
+*.egg-info
