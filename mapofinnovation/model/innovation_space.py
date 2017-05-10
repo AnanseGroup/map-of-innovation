@@ -47,7 +47,5 @@ if __name__ == "__main__":
                                    latitude = row['latitude'],
                                    longitude = row['longitude'],
                                    phone = row['phone']) for row in reader]
-
-    #     print(spaces)
         session.add_all(spaces)
         session.commit()
