@@ -31,6 +31,7 @@ class BaseapiController(BaseController):
             spaceslist.append({ column: getattr(space, column) for column in columns })
         return spaceslist
 
+
  #    @jsonify
  #    def addSpace(self):
     # #add a space

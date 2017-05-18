@@ -42,32 +42,33 @@ var allMarkers = [];
 var noLocation = [];
 var placeInfoRequired = ['name', 'city', 'country', 'primary_type', 'theme'];
 
-$.get('baseapi/getAllSpaces',{cache: true}, function(spaces) {
+$.get('baseapi/getAllSpaceLocations',{cache: true}, function(spaces) {
 	buildMarkers(spaces);
 });
 
 function buildMarkers(allSpaces) {
 	$(".loader-text").text("Building Map . . .");
+	console.log(allSpaces)
 	for (i=0; i<allSpaces.length; ++i) {	
 		var space = allSpaces[i];
 		if (space.latitude && space.longitude) {
 			try {
 				var marker = L.marker([space.latitude, space.longitude], {icon: myIcon});
-				var placeData = {}
-				placeInfoRequired.forEach(function(key) {
-					if (typeof space[key] !== 'undefined') {
-						if (key == 'primary_type') {
-							placeData['type'] = space[key].toLowerCase().trim();
-						} else if (key == 'theme') {
-							placeData['theme'] = space[key].toLowerCase().trim();
-						} else {
-							placeData[key] = space[key];
-						}
-					}	
-				});
-				marker.placeData = placeData;
-				var popup = createPopup(space);
-				marker.bindPopup(popup, {minWidth: "250"});
+				// var placeData = {}
+				// placeInfoRequired.forEach(function(key) {
+				// 	if (typeof space[key] !== 'undefined') {
+				// 		if (key == 'primary_type') {
+				// 			placeData['type'] = space[key].toLowerCase().trim();
+				// 		} else if (key == 'theme') {
+				// 			placeData['theme'] = space[key].toLowerCase().trim();
+				// 		} else {
+				// 			placeData[key] = space[key];
+				// 		}
+				// 	}	
+				// });
+				// marker.placeData = placeData;
+				// var popup = createPopup(space);
+				// marker.bindPopup(popup, {minWidth: "250"});
 				markerClusters.addLayer(marker);
 				allMarkers.push(marker);
 			} catch (e) {
