@@ -18,19 +18,33 @@ log = logging.getLogger(__name__)
 
 class BaseapiController(BaseController):
 
-    @jsonify    
+    # @jsonify    
+    # def getAllSpaceLocations(self):
+
+    #     session = Session(bind=engine)
+    #     spaces = session.query(Innovation_Space)
+
+    #     columns = [x.__str__().split('.')[1] for x in Innovation_Space.__table__.columns]
+    #     spaceslist = []
+    #     for space in spaces:
+    #         spaceslist.append({ column: getattr(space, column) for column in columns })
+    #     return spaceslist
+
+
+    @jsonify
     def getAllSpaceLocations(self):
 
-        engine = create_engine("postgres://lyla@/atlas")
         session = Session(bind=engine)
         spaces = session.query(Innovation_Space)
+        return translate_to_pseudojson(spaces)
 
+    @staticmethod
+    def translate_to_pseudojson(spaces):
         columns = [x.__str__().split('.')[1] for x in Innovation_Space.__table__.columns]
         spaceslist = []
         for space in spaces:
             spaceslist.append({ column: getattr(space, column) for column in columns })
         return spaceslist
-
 
  #    @jsonify
  #    def addSpace(self):

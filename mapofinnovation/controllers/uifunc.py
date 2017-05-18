@@ -32,97 +32,97 @@ class UifuncController(BaseController):
       if id is None :
         return 'Provide a valid space id'
       elif r.exists(id):
-	data = r.hgetall(id)
-	if data['street_address'] is '':
-		s_address = "No address available"
-	else:
-		s_address = str(data['street_address']).decode("ISO-8859-1")
-	s_primary_website = urllib.unquote(data['primary_website']).decode('utf8' )
+        data = r.hgetall(id)
+        if data['street_address'] is '':
+            s_address = "No address available"
+        else:
+            s_address = str(data['street_address']).decode("ISO-8859-1")
+        s_primary_website = urllib.unquote(data['primary_website']).decode('utf8' )
 
-	if data['twitter'] is '':
-		s_twitter = ''
-	else:
-		s_twitter = urllib.unquote(data['twitter']).decode('utf8' )
-	if data['facebook'] is '':
-                s_facebook = ''
+        if data['twitter'] is '':
+            s_twitter = ''
         else:
-		s_facebook = urllib.unquote(data['facebook']).decode('utf8' )
-	if data['jabber'] is '':
-                s_jabber = ''
+            s_twitter = urllib.unquote(data['twitter']).decode('utf8' )
+        if data['facebook'] is '':
+                    s_facebook = ''
         else:
-		s_jabber = urllib.unquote(data['jabber']).decode('utf8' )
-	if data['fablabs_url'] is '':
-                s_fablabs_url = ''
+            s_facebook = urllib.unquote(data['facebook']).decode('utf8' )
+        if data['jabber'] is '':
+            s_jabber = ''
         else:
-		s_fablabs_url = urllib.unquote(data['fablabs_url']).decode('utf8' )
-	if data['googleplus'] is '':
-                s_googleplus = ''
+            s_jabber = urllib.unquote(data['jabber']).decode('utf8' )
+        if data['fablabs_url'] is '':
+            s_fablabs_url = ''
         else:
-		s_googleplus = urllib.unquote(data['googleplus']).decode('utf8' )
-	s_country = str(data['country'])
-	s_services = ''.join((data['services'])) 
-	s_tools = ''.join((data['tools']))
-	s_function = ''.join(data['function'])
-	if data['image_url'] is '':
-		s_image = ''
-	else:
-		s_image = urllib.unquote(data['image_url']).decode('utf8')
+            s_fablabs_url = urllib.unquote(data['fablabs_url']).decode('utf8' )
+        if data['googleplus'] is '':
+            s_googleplus = ''
+        else:
+            s_googleplus = urllib.unquote(data['googleplus']).decode('utf8' )
+        s_country = str(data['country'])
+        s_services = ''.join((data['services'])) 
+        s_tools = ''.join((data['tools']))
+        s_function = ''.join(data['function'])
+        if data['image_url'] is '':
+            s_image = ''
+        else:
+            s_image = urllib.unquote(data['image_url']).decode('utf8')
 
-	s_description = str(data['description']).decode('ISO-8859-1')
-	if data['last_updated'] is '':
-		s_last_updated = ''
-	else: 
-		s_last_updated = 'Last Updated : '+str(data['last_updated'])
-	
-	s_ownership=str(data['ownership'])		
+        s_description = str(data['description']).decode('ISO-8859-1')
+        if data['last_updated'] is '':
+            s_last_updated = ''
+        else: 
+            s_last_updated = 'Last Updated : '+str(data['last_updated'])
+        
+        s_ownership=str(data['ownership'])      
 
-	if data['status'] is '':
-		s_status = ''
-	else:
-		s_status = "Status:"+str(data['status'])
-	extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']).decode('ISO-8859-1'),'s_status':s_status,'s_primarywebsite':s_primary_website,'s_email':str(data['email']),'s_theme':str(data['theme']),'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_ownership':s_ownership,'s_secondarytype':' ','s_description':s_description,'s_address':s_address,'s_country':s_country,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
+        if data['status'] is '':
+            s_status = ''
+        else:
+            s_status = "Status:"+str(data['status'])
+            extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),'s_name':str(data['name']).decode('ISO-8859-1'),'s_status':s_status,'s_primarywebsite':s_primary_website,'s_email':str(data['email']),'s_theme':str(data['theme']),'s_primarytype':str(data['primary_type']),'s_image':s_image,'s_ownership':s_ownership,'s_secondarytype':' ','s_description':s_description,'s_address':s_address,'s_country':s_country,'s_services':s_services,'s_function':s_function,'s_numberofmembers':str(data['number_of_members']),'s_networkaffliation':str(data['network_affiliation']),'s_tools':s_tools,'s_twitter':s_twitter,'s_googleplus':s_googleplus,'s_fablabs_url':s_fablabs_url,'s_facebook':s_facebook,'s_jabber':s_jabber}
         return render('/wikipage.html',extra_vars)
       else :
         return 'There is no space with this id. Please recheck and submit'
 
     def about(self):
-        return render('/about.html')		
+        return render('/about.html')        
     
     def goals(self):
         return render('/goals.html')
 
     def userDocs(self):
-    	return render('/user-documentation.html')
+        return render('/user-documentation.html')
 
     def devDocs(self):
-    	return render('/developer-documentation.html')
+        return render('/developer-documentation.html')
 
     def comingSoon(self):
-	return render('/coming-soon.html')
+        return render('/coming-soon.html')
 
     def joinus(self):
-	return render('/join-us.html')	
+        return render('/join-us.html')  
 
     def wiki(self):
-	with open('mapofinnovation/public/countries.json') as json_file:    
-		data = json.load(json_file)
-		c_list=[]
-		for p in data['country']:
-			c_list.append(str((p['countryName']).encode('ascii','replace')))
-		c.list = c_list
-        return render('/wiki.html')
-	
+        with open('mapofinnovation/public/countries.json') as json_file:    
+            data = json.load(json_file)
+            c_list=[]
+            for p in data['country']:
+                c_list.append(str((p['countryName']).encode('ascii','replace')))
+            c.list = c_list
+            return render('/wiki.html')
+    
     def wikilist(self,id=None):
-	c.filtertype = id
-	c.filterparam = (request.params.get("name"))
-	return render('/wikilist.html')	
+        c.filtertype = id
+        c.filterparam = (request.params.get("name"))
+        return render('/wikilist.html') 
 
     def contactus(self):
-	return render('/contact.html')
+        return render('/contact.html')
 
     def editspace(self,id=None):
-	return render('/formedit.html')
-	
+        return render('/formedit.html')
+    
     def gigmap(self):
         # Return a rendered front page  template
-    	return render('/makermap-gig.html')
+        return render('/makermap-gig.html')
