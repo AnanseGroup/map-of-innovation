@@ -9,7 +9,14 @@ from pylons.controllers.util import abort, redirect
 from pylons.decorators import jsonify
 from mapofinnovation.lib.base import BaseController, render
 
+from baseapi import BaseapiController
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
+from mapofinnovation.model.innovation_space import Innovation_Space
+
 log = logging.getLogger(__name__)
+
+engine = create_engine("postgres://lyla@/atlas")
 
 class SearchapiController(BaseController):
 
@@ -19,26 +26,16 @@ class SearchapiController(BaseController):
     
     @jsonify
     def findSpacesByType(self):
-	s_type = request.params.get("type")
-	s_value = request.params.get("name")
-	spaceslist = []
-        if os.environ.get("REDIS_URL") :
-                redis_url = os.environ.get("REDIS_URL")
-        else:
-                redis_url = "localhost"
-        r = redis.Redis(redis_url)
-        for key in r.scan_iter():
-                if (r.hget(key,s_type)== str(s_value)):
-                	row = r.hgetall(key)
-                	space={}
-                	for i in row:
-                        #do not show private fields 
-                        	if i in ("image_url", "g_place_id"):
-                                	pass
-                        	else:
-                                	space[i]=unicode(row[i], errors='replace')
-                	spaceslist.append(space)
-        return spaceslist	
+
+
+        s_type = request.params.get("type")
+        s_value = request.params.get("name")
+
+        session = Session(bind=engine)
+        field = 'primary_id'
+        result = session.query(Innovation_Space).filter(getattr(Innovation_Space, s_type) == s_value)
+        session.close()
+        return BaseapiController.translate_to_jsonable(result)
 
     def findSpacesAround(self):
 	#display all the spaces that exist around this location

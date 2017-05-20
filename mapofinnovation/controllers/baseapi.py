@@ -36,10 +36,10 @@ class BaseapiController(BaseController):
 
         session = Session(bind=engine)
         spaces = session.query(Innovation_Space)
-        return translate_to_pseudojson(spaces)
+        return translate_to_jsonable(spaces)
 
     @staticmethod
-    def translate_to_pseudojson(spaces):
+    def translate_to_jsonable(spaces):
         columns = [x.__str__().split('.')[1] for x in Innovation_Space.__table__.columns]
         spaceslist = []
         for space in spaces:
