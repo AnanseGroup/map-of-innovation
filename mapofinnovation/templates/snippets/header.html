@@ -3,7 +3,7 @@
     <a class="navigation-bar-logo" href="/map">
       <img src="/assets/logo_ananse.png" id="navigation-bar-home">
     </a>
-	% for menu_item in ("map", "about", "docs", "wiki"):
+	% for menu_item in ("map", "wiki", "about", "docs"):
         % if '/'+menu_item == url.current() :
             <a href="${url('/'+menu_item)}" class="navigation-bar-button selected-navigation-bar-button">
          % elif url.current() == '/about/goals' :
