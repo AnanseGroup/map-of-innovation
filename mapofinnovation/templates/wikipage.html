@@ -1,22 +1,22 @@
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Source+Sans+Pro:200,300,300i,400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/wikipage.css"/>
-<link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
-<script type='text/javascript' src='/js/wiki.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Source+Sans+Pro:200,300,300i,400,600" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/wikipage.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
+  <script type='text/javascript' src='/js/wiki.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
  <%include file="/snippets/header.html" />
  
-<div class="wBlockHeader">
-<div class="w-top-navigation">
-<a href="/editspace?id=${s_id}" >
+ <div class="wBlockHeader">
+  <div class="w-top-navigation">
+    <a href="/editspace?id=${primary_id}" >
     	<img src="/assets/edit_button.png" id="w-top-navigation-bar-edit-button">
-</a>
+    </a>
 <!--a href="/" >
     	<img src="/assets/flag_button.png" id="w-top-navigation-bar-flag-incorrect-button">
-</a-->
+    </a-->
 <!--/div>
  <div class="wnavigation-bar">
     <a href="/" id="wnavigation-bar-article-button" class="navigation-bar-button selected-navigation-bar-button">Article</a>
@@ -25,103 +25,102 @@
 	</div>
 </div-->
 <div class="wBlockOne">
-<img src="/assets/Placeholder_logo.png" alt="#" style="height: 100px; display:block;margin-left: auto;margin-right: auto;">
-<p ></p>
-<h2 id="wTitle">${s_name}</h2>
- % if s_primarywebsite != "":
-<a id="wWebsite" href="http://${s_primarywebsite | n}" target="_blank">${s_primarywebsite | n}</a>
- % endif
-<p id="wStatus">${s_status}</p>
-<p id="wType">${s_primarytype}</p>
-<p id="w-space-description">${s_description}</p>
-<hr />
-</div>
-<div class="wBlockTwo">
-<div class="rowAlign">
-  <div class="rowTextBlock">
-  <p id="wBlockSubTitle">Contact Info</p>
-  <!--a href="http://${s_primarywebsite | n}" target="_blank">${s_primarywebsite | n}</a-->
-  % if s_email != "":
-  <a href= "mailto:${s_email | n}">${s_email | n}</a>  
+  <img src="/assets/Placeholder_logo.png" alt="#" style="height: 100px; display:block;margin-left: auto;margin-right: auto;">
+  <p ></p>
+  <h2 id="wTitle">${name}</h2>
+  % if primary_website != None:
+  <a id="wWebsite" href="http://${primary_website | n}" target="_blank">${primary_website | n}</a>
   % endif
-  <br/>
-	<div id="w-address">  
-	<p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${s_address}</p> 
-	 % if s_country != "":
-	<a href="/uifunc/wikilist/country?name=${s_country}">${s_country}</a>
-	% endif
-  </div> 
-  </div>
-  <div class="rowTextBlock">
-   <p id="wBlockSubTitle">Social Media</p>
-   <div class="social-media-block">
-	% if s_twitter != "":
-   <a href="${s_twitter | n}"  id="w-social-button" class="w-social-link">
-	<img src="/assets/social_twitter.png" class="w-social-button" >
-   </a>
-% endif
-   % if s_googleplus != "":
-   <a href="${s_googleplus | n}"  id="w-social-gplus"  class="w-social-link">
-	<img src="/assets/social_google+.png" class="w-social-button">
-   </a>
-   	% endif
-   % if s_fablabs_url != "":
-   <a href="${s_fablabs_url | n}" id="w-social-fablab" class="w-social-link">
-	<img src="/assets/social_fablab.png"  class="w-social-button">
-   	</a>
-	% endif
-   % if s_facebook != "":
-   <a href="${s_facebook | n}"  id="w-social-facebook" class="w-social-link">
-	<img src="/assets/social_facebook.png"  class="w-social-button">
-   </a>
-   %endif
+  <p id="wStatus">${status}</p>
+  <p id="wType">${types}</p>
+  <p id="w-space-description">${description}</p>
+  <hr />
+</div>
+
+<div class="wBlockTwo">
+  <div class="rowAlign">
+    <div class="rowTextBlock">
+      <p id="wBlockSubTitle">Contact Info</p>
+      % if email != None:
+      <a href= "mailto:${email | n}">${email | n}</a>  
+      % endif
+      <br/>
+      <div id="w-address">  
+       <p><img src="/assets/pin_map.png" alt="" style="width:8px;height: 10px;">${street_address}</p> 
+       % if country != None:
+       <a href="/uifunc/wikilist/country?name=${country}">${country}</a>
+       % endif
+     </div> 
    </div>
+   <div class="rowTextBlock">
+     <p id="wBlockSubTitle">Social Media</p>
+     <div class="social-media-block">
+
+       % if twitter != None:
+       <a href="${twitter | n}"  id="w-social-button" class="w-social-link">
+         <img src="/assets/social_twitter.png" class="w-social-button" >
+       </a>
+       % endif
+       % if googleplus != None:
+       <a href="${googleplus | n}"  id="w-social-gplus"  class="w-social-link">
+         <img src="/assets/social_google+.png" class="w-social-button">
+       </a>
+       % endif
+       % if fablabs_url != None:
+       <a href="${fablabs_url | n}" id="w-social-fablab" class="w-social-link">
+         <img src="/assets/social_fablab.png"  class="w-social-button">
+       </a>
+       % endif
+       % if facebook != None:
+       <a href="${facebook | n}"  id="w-social-facebook" class="w-social-link">
+         <img src="/assets/social_facebook.png"  class="w-social-button">
+       </a>
+       %endif
+     </div>
+   </div>
+   <div class="rowTextBlock">
+    <p id="wBlockSubTitle">Themes</p>
+    <p id="textBlock">${theme}</p>
   </div>
   <div class="rowTextBlock">
-  <p id="wBlockSubTitle">Themes</p>
-  <p id="textBlock">${s_theme}</p>
-  </div>
-  <div class="rowTextBlock">
-  <p id="wBlockSubTitle">Source</p>
-  <p "textBlock">${s_source}</p>
+    <p id="wBlockSubTitle">Source</p>
+    <p "textBlock">${source}</p>
   </div>
 </div>
 <hr/>
 </div>
-
 <div class="wBlockFour">
-        <div class="rowAlign">
-                <div class="rowTextBlock">
-                <p id="wBlockSubTitle">Affiliation</p>
-                <p>${s_networkaffliation}</p>
-                </div>
-                <div class="rowTextBlock">
-                <p id="wBlockSubTitle">Ownership</p>
-                <p>${s_ownership}</p>
-                </div>
-                <div class="rowTextBlock">
-                <p id="wBlockSubTitle">Services & Capabilities</p>
-                <p id="textBlock">${s_services}</p>
-                <p id="textBlock">${s_tools} </p>
-                </div>
-                <div class="rowTextBlock">
-                <p id="wBlockSubTitle">Members</p>
-                <p>${s_numberofmembers}</p>
-                </div>
+  <div class="rowAlign">
+    <div class="rowTextBlock">
+      <p id="wBlockSubTitle">Affiliation</p>
+      <p>${network_affiliation}</p>
+    </div>
+    <div class="rowTextBlock">
+      <p id="wBlockSubTitle">Ownership</p>
+      <p>${ownership}</p>
+    </div>
+    <div class="rowTextBlock">
+      <p id="wBlockSubTitle">Services & Capabilities</p>
+      <p id="textBlock">${services}</p>
+      <p id="textBlock">${tools} </p>
+    </div>
+    <div class="rowTextBlock">
+      <p id="wBlockSubTitle">Members</p>
+      <p>${number_of_members}</p>
+    </div>
 
-        </div>
-        <hr/>
+  </div>
+  <hr/>
 </div>
 
 <div class="wBlockTh">
-% if s_image != "":
-<div  class="w-block-center">
-   <img src="${s_image}" alt="" style="height: 250px; display:block;margin-left: auto;margin-right: auto;" >   
-    
-</div>
+  % if image_url != None:
+  <div  class="w-block-center">
+   <img src="${image_url}" alt="" style="height: 250px; display:block;margin-left: auto;margin-right: auto;" >   
+   
+ </div>
 </div>
 % endif
-<p>${s_last_updated}</p>
-</div>
+<p>${last_updated}</p>
 </body>
 </html>

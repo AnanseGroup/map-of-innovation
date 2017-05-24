@@ -15,6 +15,7 @@ from datetime import datetime
 
 from mapofinnovation.model.innovation_space import Innovation_Space
 log = logging.getLogger(__name__)
+engine = create_engine("postgres://lyla@/atlas")
 
 class BaseapiController(BaseController):
 
@@ -36,7 +37,11 @@ class BaseapiController(BaseController):
 
         session = Session(bind=engine)
         spaces = session.query(Innovation_Space)
-        return translate_to_jsonable(spaces)
+        # spaceslist = []
+        # for space in spaces:
+        #     spaceslist.append(space)
+        # return spaceslist
+        return BaseapiController.translate_to_jsonable(spaces)
 
     @staticmethod
     def translate_to_jsonable(spaces):

@@ -29,6 +29,16 @@ class Innovation_Space(Base):
         return "<Innovation_Space(name: %r at street_address: %r and email: %r)>" \
                     % (self.name, self.street_address, self.email)
 
+    _column_names_list = None
+    def _column_names(self):
+      if not self._column_names_list:
+        self._column_names_list = [x.__str__().split('.')[1] for x in self.__table__.columns]
+      return self._column_names_list
+
+
+    def __json__(self):
+        return { column: getattr(self, column) for column in self._column_names() }
+
 if __name__ == "__main__":
     from sqlalchemy.orm import Session
     import csv

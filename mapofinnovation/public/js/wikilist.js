@@ -10,7 +10,7 @@ $.get('/searchapi/findSpacesByType',{'type':type_filter,'name':(name_f)}, functi
 		var spaceitem = spaces[i];
 		$('#wiki-list-content ul').append(
     $('<li>').append(
-        $('<a>').attr('href',spaceitem["wiki"]).append(
+        $('<a>').attr('href',"/uifunc/wikipage/"+spaceitem['primary_id']).append(
             $('<span>').attr('class', 'tab').append(spaceitem["name"])
 ))); 
 		}
