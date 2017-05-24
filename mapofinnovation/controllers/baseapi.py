@@ -91,7 +91,7 @@ class BaseapiController(BaseController):
     def getSpace(self):
         id = request.params.get("id")
         session = Session(bind=engine)
-        result = session.query(Innovation_Space).filter(Innovation_Space.primary_id==id).one()
+        result = session.query(Innovation_Space).get(id)
         session.close()
         return result
 
@@ -99,19 +99,11 @@ class BaseapiController(BaseController):
     def changeSpace(self,id=None):
         #change a space
         #TO DO: implement change space for verified space
-        if os.environ.get("REDIS_URL") :
-            redis_url = os.environ.get("REDIS_URL")
-        else:
-            redis_url = "localhost"
-        r = redis.Redis(redis_url)
-        params=request.params
-        temp_params = {}
-        for k,v in params.items():
-            if(temp_params.has_key(k)) :
-                temp_params[k]=temp_params[k]+","+v
-            else :
-                temp_params.update({k:v})
-            r.hmset(id,temp_params)
+
+        session = Session(bind=engine)
+        result = session.query(Innovation_Space).filter(Innovation_Space.primary_id==id).update(request.params)
+        session.commit()
+        session.close()
         return render('/thanks.html',{'s_id':id})
         
  #    @jsonify

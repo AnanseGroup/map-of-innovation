@@ -29,7 +29,7 @@ class UifuncController(BaseController):
     def wikipage(self,id=None):
         #Return a wiki for the given space 
         session = Session(bind=engine)
-        result = session.query(Innovation_Space).filter(Innovation_Space.primary_id==id).one()
+        result = session.query(Innovation_Space).get(id)
         session.close()
         return render('/wikipage.html',result.__json__())
         # extra_vars={'s_id':id,'s_last_updated':s_last_updated,'s_source':str(data['source']),
