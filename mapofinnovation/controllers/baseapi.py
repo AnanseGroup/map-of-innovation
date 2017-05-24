@@ -89,16 +89,11 @@ class BaseapiController(BaseController):
 
     @jsonify
     def getSpace(self):
-        #get a space details
-        skey = request.params.get("id")
-        if os.environ.get("REDIS_URL") :
-                    redis_url = os.environ.get("REDIS_URL")
-        else:
-                redis_url = "localhost"
-        r = redis.Redis(redis_url)
-        space_details = r.hgetall(skey)
-        del space_details["g_place_id"]
-        return space_details
+        id = request.params.get("id")
+        session = Session(bind=engine)
+        result = session.query(Innovation_Space).filter(Innovation_Space.primary_id==id).one()
+        session.close()
+        return result
 
 
     def changeSpace(self,id=None):
